@@ -19,7 +19,8 @@
                         @endif
                         <div class="card-body">
                             <h5 class="card-title">{{ $announcement->title }}</h5>
-                            <p class="card-text">Categoria : {{ $announcement->category->name }}</p>
+                            <p>Categoria : </p>
+                            <a  href="{{route('announcement.category' , ['category'=>$announcement->category->id])}}"  class="card-text"> {{ $announcement->category->name }}</a>
                             <p class="card-text">{{ $announcement->description }}</p>
                             <p class="card-text">{{ $announcement->price }}</p>
                             <a href="{{ route('announcement.show', compact('announcement')) }}"

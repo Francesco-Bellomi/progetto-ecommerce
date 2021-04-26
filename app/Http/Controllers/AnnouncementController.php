@@ -11,6 +11,7 @@ class AnnouncementController extends Controller
     public function __construct()
     {
      $this->middleware('auth')->except('homepage');   
+     
     }
     /**
      * Display a listing of the resource.
@@ -120,4 +121,18 @@ class AnnouncementController extends Controller
     {
         //
     }
+
+
+    public function category($category){
+
+        $announcements = Announcement::where('category_id', $category)->get();
+
+        $category = Category::find($category);
+
+        
+        return view('announcement.category' , compact('announcements' , 'category'));
+    }
+
+
+
 }

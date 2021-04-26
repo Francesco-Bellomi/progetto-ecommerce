@@ -20,3 +20,4 @@ Route::get('/announcement/create' , [AnnouncementController::class , 'create'])-
 Route::post('/announcement/store' , [AnnouncementController::class , 'store'])->name('announcement.store');
 Route::get('/announcement/index' , [AnnouncementController::class , 'index'])->name('announcement.index');
 Route::get('/announcement/show/{announcement}' , [AnnouncementController::class , 'show'])->name('announcement.show');
+Route::get('/announcement/category/{category}' , [AnnouncementController::class , 'category'])->name('announcement.category');
