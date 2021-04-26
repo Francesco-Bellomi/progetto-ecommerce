@@ -12,7 +12,11 @@
             @foreach ($announcements as $announcement)
                 <div class="col-12 col-md-4">
                     <div class="card">
-                        {{-- <img src="..." class="card-img-top" alt="..."> --}}
+                        @if ($announcement->img)
+                            <img src="{{Storage::url($announcement->img)}}" class="card-img-top float-right" alt="...">
+                        @else 
+                            <img src="/img/default.jpg" class="card-img-top float-right" alt="">
+                        @endif
                         <div class="card-body">
                             <h5 class="card-title">{{ $announcement->title }}</h5>
                             <p class="card-text">Categoria : {{ $announcement->category->name }}</p>

@@ -18,6 +18,7 @@ class CreateAnnouncementsTable extends Migration
             $table->string('title');
             $table->string('price');
             $table->text('description');
+            $table->string('img')->nullable();
             $table->timestamps();
         });
     }

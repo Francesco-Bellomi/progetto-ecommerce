@@ -5,9 +5,19 @@
                 <h1>Dettagli annuncio : {{ $announcement->title }}</h1>
             </div>
             <div class="col-12 col-md-6">{{ $announcement->description }}</div>
-            <col-12 class="col-md-4">
+            <div class="col-12 col-md-6">
+                @if ($announcement->img)
+                    <img src="{{ Storage::url($announcement->img) }}" class="card-img-top float-right img-fluid" alt="...">
+                @else
+                    <img src="/img/default.jpg" class="card-img-top float-right" alt="">
+                @endif
+            </div>
+            <div class="col-12 col-md-3">
                 {{ $announcement->price }}
-            </col-12>
+            </div>
+            <div class="col-12 col-md-3">
+                {{ $announcement->created_at->format('d/m/y') }}
+            </div>
             <a href="{{ route('announcement.index') }}" class="btn btn-success">Torna indietro</a>
         </div>
     </div>

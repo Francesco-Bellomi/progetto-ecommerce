@@ -54,13 +54,24 @@ class AnnouncementController extends Controller
      */
     public function store(Request $request)
     {
-        $announcement = Announcement::create([
-            'title'=>$request->title,
-            'description'=>$request->description,
-            'price'=>$request->price,
-            'category_id'=>$request->category,
 
-        ]);
+        if ($request->img) {
+            $announcement = Announcement::create([
+                'title'=>$request->title,
+                'description'=>$request->description,
+                'price'=>$request->price,
+                'category_id'=>$request->category,
+                'img'=>$request->file('img')->store('/public/img'),
+            ]);
+        }else{
+            $announcement = Announcement::create([
+                'title'=>$request->title,
+                'description'=>$request->description,
+                'price'=>$request->price,
+                'category_id'=>$request->category,
+            ]);
+        }
+
 
         return redirect(route('announcement.index'))->with('message' , 'il tuo annuncio è stato inserito correttamente');
     }

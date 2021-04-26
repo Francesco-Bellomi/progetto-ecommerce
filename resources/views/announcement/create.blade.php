@@ -13,27 +13,26 @@
                             aria-describedby="titleHelp">
                     </div>
                     <div class="mb-3">
-                        <label for="category" class="form-label">title </label>
+                        <label for="category" class="form-label">seleziona categoria</label>
                         <select name="category" id="category">
                             @foreach ($categories as $category)
-
                                 <option value="{{ $category->id }}"> {{ $category->name }}</option>
-
                             @endforeach
                         </select>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputprice1" class="form-label">price </label>
                         <input type="number" name="price" class="form-control" id="exampleInputprice1">
-
                     </div>
-
+                    <div class="mb-3">
+                        <label for="exampleInputimage" class="form-label">Aggiungi Immagine</label>
+                        <input type="file" name="img" class="form-control" id="exampleInputimage">
+                    </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Description</label>
                         <textarea name="description" id="exampleInputEmail1" class="form-control" cols="36"
                             rows="6"></textarea>
                     </div>
-
                     <button type="submit" class="btn btn-primary">Inserisci Annnuncio</button>
                 </form>
             </div>
