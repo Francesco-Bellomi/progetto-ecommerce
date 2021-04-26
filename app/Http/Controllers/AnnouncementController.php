@@ -10,13 +10,23 @@ class AnnouncementController extends Controller
 {
     public function __construct()
     {
-     $this->middleware('auth');   
+     $this->middleware('auth')->except('homepage');   
     }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function homepage(){
+
+        $announcements = Announcement::all();
+        $categories=Category::all();
+
+        return view('homepage',compact('announcements', 'categories'));
+    }
+
+
     public function index()
     {
         $announcements = Announcement::all();

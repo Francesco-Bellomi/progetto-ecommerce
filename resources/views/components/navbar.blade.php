@@ -21,6 +21,9 @@
          </li> 
        @endguest
        @auth
+       <li class="nav-item">  
+        <a class="nav-link active" aria-current="page" href="{{route('homepage')}}">Home</a>
+     </li>
        <li class="nav-item">
         <a class="nav-link" href="{{route('announcement.create')}}">Inserisci Annuncio</a>
       </li>
