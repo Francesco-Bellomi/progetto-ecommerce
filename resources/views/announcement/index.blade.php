@@ -15,6 +15,10 @@
                     {{-- <img src="..." class="card-img-top" alt="..."> --}}
                     <div class="card-body">
                         <h5 class="card-title">{{$announcement->title}}</h5>
+                        <p class="card-text">Categoria:{{$announcement->category->name}}</p>
+
+                    
+
                         <p class="card-text">{{$announcement->description}}</p>
                         <p class="card-text">{{$announcement->price}}</p>
                         <a href="{{route('announcement.show' , compact('announcement'))}}" class="btn btn-primary">Go somewhere</a>

@@ -2,7 +2,10 @@
 
 namespace Database\Seeders;
 
+
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +16,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+      $categories=['sport', 'vestiti', 'informatica', 'immobili', 'Motori', 'giochi', 'telefonia', 'libri', 'arte', 'musica'];
+      
+      foreach ($categories as $category ) {
+          DB::table('categories')->insert([
+              'name'=>$category,
+              'created_at'=>Carbon::now(),
+              'updated_at'=>Carbon::now(),
+          ]);
+      }
     }
 }
