@@ -10,7 +10,7 @@
                 <h1>Index</h1>
             </div>
             @foreach ($announcements as $announcement)
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-3">
                     <div class="card">
                         @if ($announcement->img)
                             <img src="{{ Storage::url($announcement->img) }}" class="card-img-top float-right"
@@ -32,10 +32,10 @@
                 </div>
             @endforeach
         </div>
-        {{-- <div class="row">
+        <div class="row">
             <div class="col-12 col-md-8">
                 {{ $announcements->links() }}
             </div>
-        </div> --}}
+        </div>
     </div>
 </x-layout>
