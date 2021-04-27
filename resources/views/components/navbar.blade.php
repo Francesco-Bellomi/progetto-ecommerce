@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-main-color tx-thi-color fixed-top">
+<nav class="navbar navbar-expand-lg bg-main-color tx-thi-color sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ route('homepage') }}"><img src="/img/logo_small.png" alt="" class="logo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"

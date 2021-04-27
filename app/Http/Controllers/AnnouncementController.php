@@ -34,7 +34,7 @@ class AnnouncementController extends Controller
         $announcements = Announcement::all();
         $categories=Category::all();
       
-        $announcements= Announcement::paginate(15);
+        $announcements= Announcement::paginate(8);
 
        
         return view('announcement.index' , compact('announcements', 'categories'));

@@ -64,7 +64,7 @@
                                     <div class="card-footer bg-main-color radius-custom3 tx-thi-color fs-5">
                                         <p class="card-text">Categoria : <a
                                             href="{{ route('announcement.category', ['category' => $announcement->category->id]) }}"
-                                            class="card-text"> {{ $announcement->category->name }}</a></p>
+                                            class="card-text link-cat"> {{ $announcement->category->name }}</a></p>
                                       </div>
                                 </div>
                             </div>
@@ -174,7 +174,7 @@
                     <img src="/img/finger.png" alt="" class="img-fluid">
                 </div>
                 <div class="col-4 align-items-center">
-                    <a href="{{ route('announcement.create') }}" class="btn rounded-pill fs-3">Inserisci annuncio</a>
+                    <a href="{{ route('announcement.create') }}" class="btn rounded-pill fs-3 px-5">Inserisci annuncio</a>
                 </div>
             </div>
         </div>

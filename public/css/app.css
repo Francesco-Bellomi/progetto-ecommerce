@@ -10841,7 +10841,7 @@ textarea.form-control-lg {
     color: var(--main-color);
   }
 .tx-sec-color{
-  color: var(--sec-color);
+  color: var(--sec-color) !important;
 }
 .tx-thi-color{
     color: var(--thi-color);
@@ -10850,14 +10850,15 @@ textarea.form-control-lg {
     height: 80px;
     width: 200px;
 }
-a {
+.navbar a {
     color: var(--thi-color);
     text-decoration: none;
 }
-a:hover {
+.navbar a:hover {
     color: var(--thi-color);
     text-decoration: none;
 }
+
 .annunci{
     background-color: #5492aa;
     color: var(--thi-color);
@@ -11129,7 +11130,7 @@ h1 , h2 , h3 , h4 , h5 , h6{
 
 /* Bottoni custom */
 .btn{
-    color: var(--thi-color);
+    color: var(--thi-color) !important;
     font-size: 16px;
     font-weight: 500;
     /* text-transform: uppercase; */
@@ -11182,5 +11183,14 @@ h1 , h2 , h3 , h4 , h5 , h6{
 }
 @media only screen and (max-width: 767px){
     .btn{ margin-bottom: 20px; }
+}
+
+.link-cat{
+  color: var(--thi-color);
+  text-decoration: none;
+}
+.link-cat:hover{
+  color: #1ce4e0;
+  text-decoration: none;
 }
 

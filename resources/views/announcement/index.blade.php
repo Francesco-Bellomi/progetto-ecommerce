@@ -11,7 +11,7 @@
             </div>
             @foreach ($announcements as $announcement)
                 <div class="col-12 col-md-3">
-                    <div class="card">
+                    <div class="card my-5">
                         @if ($announcement->img)
                             <img src="{{ Storage::url($announcement->img) }}" class="card-img-top float-right"
                                 alt="...">
@@ -22,9 +22,9 @@
                             <h5 class="card-title">{{ $announcement->title }}</h5>
                             <p>Categoria : </p>
                             <a href="{{ route('announcement.category', ['category' => $announcement->category->id]) }}"
-                                class="card-text"> {{ $announcement->category->name }}</a>
+                                class="card-text tx-main-color text-decoration-none"> {{ $announcement->category->name }}</a>
                             <p class="card-text">{{ $announcement->description }}</p>
-                            <p class="card-text">{{ $announcement->price }}</p>
+                            <p class="card-text">{{ $announcement->price }}€</p>
                             <a href="{{ route('announcement.show', compact('announcement')) }}"
                                 class="btn btn-primary">Go somewhere</a>
                         </div>
