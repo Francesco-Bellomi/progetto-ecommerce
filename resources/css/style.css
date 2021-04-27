@@ -48,27 +48,48 @@ h1 , h2 , h3 , h4 , h5 , h6{
 }
 
 .masthead {
-    height: 110vh;
-    min-height: 500px;
+    height: 120vh;
+    /* min-height: 50px; */
     /* background: linear-gradient(to top, #00d8d44b , #f8f8f849), url('/img/upsmoke.png'); */
     background-image: url('/img/upsmoke.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-
+@media screen and (max-width: 1000px) {
+    .masthead {
+        max-height: 50vh;
+    }
+  }
 .section1 {
-    height: 80vh;
-    min-height: 500px;
-  background-image: url('/img/orsmoke.png');
+    height: 100vh;
+    /* min-height: 500px; */
+  background-image: url('/img/explosion.png');
   /* background: linear-gradient(to bottom, #00d8d44b , #f8f8f849), url('/img/smoketransparent2.png'); */
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  
-
 }
+@media screen and (max-width: 1000px) {
+    .section1 {
+        max-height: 50vh;
+    }
+  }
 
+.section2 {
+    height: 100vh;
+    /* min-height: 500px; */
+  background-image: url('/img/orsmoke.png');
+  /* background: linear-gradient(to bottom, #00d8d44b , #f8f8f849), url('/img/smoketransparent2.png'); */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 1000px) {
+    .section2 {
+        height: 50vh;
+    }
+  }
 .sbar{
     
     border-radius: 15px;

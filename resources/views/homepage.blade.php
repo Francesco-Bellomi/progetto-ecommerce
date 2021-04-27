@@ -5,16 +5,14 @@
         </div>
     @endif
     <!-- Full Page Image Header with Vertically Centered Content -->
-<header class="masthead">
-    <div class="container h-100">
+<header class="masthead container-fluid">
       <div class="row h-100 align-items-center">
         <div class="col-12 text-center">
           <h1 class="font-weight-light">Vertically Centered Masthead Content</h1>
           <p class="lead">A great starter layout for a landing page</p>
         </div>
-      </div>
     </div>
-  </header>
+</header>
   <div class="container bg-main-color py-5 my-5 radius-custom">
     <div class="row text-center">
       <div class="col-12">
@@ -76,7 +74,13 @@
         </div>
     </div>
     <div class="container-fluid bg-main-color">
-        <div class="row mt-5">
+        <div class="row text-center">
+            <div class="col-12 mt-5">
+                <h2 class="tx-thi-color">I nostri consigli</h2>
+                <h2 class="tx-thi-color">Ecco qualche semplice consiglio per concludere i tuoi affari in tutta sicurezza</h2>
+            </div>
+        </div>
+        <div class="row pb-5">
             <div class="col-12">
                 <div class="last-ads mt-5">
                     <div>
@@ -158,4 +162,30 @@
             </div>
         </div>
     </div>
+    <div class="section2">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12 my-5">
+                    <h2 class="tx-main-color fw-bold fs-1">I tuoi affari iniziano da qui!</h2>
+                </div>
+            </div>
+            <div class="row py-5 justify-content-evenly">
+                <div class="col-4">
+                    <img src="/img/finger.png" alt="" class="img-fluid">
+                </div>
+                <div class="col-4 align-items-center">
+                    <a href="{{ route('announcement.create') }}" class="btn rounded-pill fs-3">Inserisci annuncio</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+          <div class="row align-items-center mt-5">
+            <div class="col-12 text-center">
+              <h1 class="tx-for-color fw-bold fs-1">Contattaci</h1>
+              <p class="tx-for-color fs-2">Per qualsiasi dubbio</p>
+              <a href="" class="btn rounded-pill fs-3 px-5">Scrivici!</a>
+            </div>
+          </div>
+        </div>
+      </div>
 </x-layout>
