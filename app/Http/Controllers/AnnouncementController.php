@@ -10,8 +10,7 @@ class AnnouncementController extends Controller
 {
     public function __construct()
     {
-     $this->middleware('auth')->except('homepage');   
-     
+        $this->middleware('auth')->except('homepage');
     }
     /**
      * Display a listing of the resource.
@@ -19,25 +18,26 @@ class AnnouncementController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function homepage(){
+    public function homepage()
+    {
 
         $announcements = Announcement::all();
-        $announcements = Announcement::orderBy('created_at' , 'desc')->take(5)->get();
-        $categories=Category::all();
+        $announcements = Announcement::orderBy('created_at', 'desc')->take(5)->get();
+        $categories = Category::all();
 
-        return view('homepage',compact('announcements', 'categories'));
+        return view('homepage', compact('announcements', 'categories'));
     }
 
 
     public function index()
     {
         $announcements = Announcement::all();
-        $categories=Category::all();
-      
-        $announcements= Announcement::paginate(8);
+        $categories = Category::all();
 
-       
-        return view('announcement.index' , compact('announcements', 'categories'));
+        $announcements = Announcement::paginate(8);
+
+
+        return view('announcement.index', compact('announcements', 'categories'));
     }
 
     /**
@@ -47,7 +47,7 @@ class AnnouncementController extends Controller
      */
     public function create()
     {
-        $categories=Category::all();
+        $categories = Category::all();
         return view('announcement.create', compact('categories'));
     }
 
@@ -62,23 +62,23 @@ class AnnouncementController extends Controller
 
         if ($request->img) {
             $announcement = Announcement::create([
-                'title'=>$request->title,
-                'description'=>$request->description,
-                'price'=>$request->price,
-                'category_id'=>$request->category,
-                'img'=>$request->file('img')->store('/public/img'),
+                'title' => $request->title,
+                'description' => $request->description,
+                'price' => $request->price,
+                'category_id' => $request->category,
+                'img' => $request->file('img')->store('/public/img'),
             ]);
-        }else{
+        } else {
             $announcement = Announcement::create([
-                'title'=>$request->title,
-                'description'=>$request->description,
-                'price'=>$request->price,
-                'category_id'=>$request->category,
+                'title' => $request->title,
+                'description' => $request->description,
+                'price' => $request->price,
+                'category_id' => $request->category,
             ]);
         }
 
 
-        return redirect(route('announcement.index'))->with('message' , 'il tuo annuncio è stato inserito correttamente');
+        return redirect(route('announcement.index'))->with('message', 'il tuo annuncio è stato inserito correttamente');
     }
 
     /**
@@ -89,7 +89,7 @@ class AnnouncementController extends Controller
      */
     public function show(Announcement $announcement)
     {
-        return view('announcement.show' , compact('announcement'));
+        return view('announcement.show', compact('announcement'));
     }
 
     /**
@@ -127,17 +127,15 @@ class AnnouncementController extends Controller
     }
 
 
-    public function category($category){
+    public function category($category)
+    {
 
         $announcements = Announcement::where('category_id', $category)->get();
 
         $category = Category::find($category);
 
         $announcements = $category->announcements()->paginate(5);
-        
-        return view('announcement.category' , compact('announcements' , 'category'));
+
+        return view('announcement.category', compact('announcements', 'category'));
     }
-
-
-
 }

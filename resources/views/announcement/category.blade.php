@@ -17,14 +17,14 @@
                             <h5 class="card-title">{{ $announcement->title }}</h5>
                             <p class="card-text">{{ $announcement->description }}</p>
                             <p class="card-text">{{ $announcement->price }}</p>
-                            <a href="{{ route('announcement.index') }}" class="btn btn-primary">Torna alla pagina
+                            <a href="{{ route('announcement.index') }}" class="btn rounded-pill">Torna alla pagina
                                 annunci</a>
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center py-5">
             <div class="col-3">
                 {{ $announcements->links() }}
             </div>

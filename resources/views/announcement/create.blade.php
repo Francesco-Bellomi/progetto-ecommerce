@@ -2,9 +2,9 @@
     <div class="container">
         <div class="row justify-content-evenly">
             <div class="col-12">
-                <h1>Inserisci il tuo annuncio</h1>
+                <h1 class="text-center tx-main-color fw-bold py-5 display-1">Inserisci il tuo annuncio</h1>
             </div>
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-md-8 text-center fs-3">
                 <form method="POST" action="{{ route('announcement.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
@@ -33,7 +33,7 @@
                         <textarea name="description" id="exampleInputEmail1" class="form-control" cols="36"
                             rows="6"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Inserisci Annnuncio</button>
+                    <button type="submit" class="btn rounded-pill">Inserisci Annnuncio</button>
                 </form>
             </div>
         </div>

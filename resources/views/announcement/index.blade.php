@@ -7,10 +7,10 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1>Index</h1>
+                <h1 class="text-center tx-main-color fw-bold py-5 display-1">Lista Annunci</h1>
             </div>
             @foreach ($announcements as $announcement)
-                <div class="col-12 col-md-3">
+                <div class=" col-md-4 col-xl-3">
                     <div class="card my-5">
                         @if ($announcement->img)
                             <img src="{{ Storage::url($announcement->img) }}" class="card-img-top float-right"
@@ -26,13 +26,13 @@
                             <p class="card-text">{{ $announcement->description }}</p>
                             <p class="card-text">{{ $announcement->price }}€</p>
                             <a href="{{ route('announcement.show', compact('announcement')) }}"
-                                class="btn btn-primary">Go somewhere</a>
+                                class="btn rounded-pill">Go somewhere</a>
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
-        <div class="row">
+        <div class="row py-5">
             <div class="col-12 col-md-8">
                 {{ $announcements->links() }}
             </div>

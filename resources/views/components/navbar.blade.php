@@ -9,7 +9,7 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link active nav-link annunci" href="{{ route('announcement.create') }}">Inserisci Annuncio</a>
+                        <a class="nav-link active nav-link annunci" href="{{ route('announcement.create') }}"> <i class="fas fa-plus"></i> Inserisci Annuncio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{ route('login') }}">Login</a>
@@ -24,7 +24,7 @@
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Categorie
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu border-0 p-0" aria-labelledby="navbarDropdown">
                             @foreach ($categories as $category)
                                 <li><a class="dropdown-item"
                                         href="{{ route('announcement.category', ['category' => $category->id]) }}">{{ $category->name }}</a>
@@ -33,17 +33,17 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link annunci" href="{{ route('announcement.create') }}">Inserisci Annuncio</a>
+                        <a class="nav-link annunci" href="{{ route('announcement.create') }}"> <i class="fas fa-plus"></i> Inserisci Annuncio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('announcement.index') }}">Lista Annunci</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown border-0">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Ciao {{ Auth::user()->name }}
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
                             <li>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();document.getElementById('form-logout').submit()">
