@@ -22,6 +22,7 @@ class AnnouncementController extends Controller
     public function homepage(){
 
         $announcements = Announcement::all();
+        $announcements = Announcement::orderBy('created_at' , 'desc')->take(5)->get();
         $categories=Category::all();
 
         return view('homepage',compact('announcements', 'categories'));
@@ -129,6 +130,7 @@ class AnnouncementController extends Controller
 
         $category = Category::find($category);
 
+        $announcements = $category->announcements()->paginate(5);
         
         return view('announcement.category' , compact('announcements' , 'category'));
     }

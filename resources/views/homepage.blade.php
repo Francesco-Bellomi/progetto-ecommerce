@@ -9,6 +9,7 @@
             <div class="col-12">
                 <h1>Homepage</h1>
             </div>
+            <div class="col-12"><h3>Ultimi 5 annunci</h3></div>
             @foreach ($announcements as $announcement)
                 <div class="col-12 col-md-4">
                     <div class="card">
@@ -20,7 +21,9 @@
                         @endif
                         <div class="card-body">
                             <h5 class="card-title">{{ $announcement->title }}</h5>
-                            <p class="card-text">Categoria : {{ $announcement->category->name }}</p>
+                            <p>Categoria : <a
+                                    href="{{ route('announcement.category', ['category' => $announcement->category->id]) }}"
+                                    class="card-text"> {{ $announcement->category->name }}</a></p>
                             <p class="card-text">{{ $announcement->description }}</p>
                             <p class="card-text">{{ $announcement->price }}</p>
                             <a href="{{ route('announcement.show', compact('announcement')) }}"
