@@ -19,14 +19,16 @@
                             <img src="/img/default.jpg" class="card-img-top float-right" alt="">
                         @endif
                         <div class="card-body">
+                            <p class="card-text">Pubblicato il :
+                                {{ $announcement->created_at->format('d/m/y') }}</p>
                             <h5 class="card-title">{{ $announcement->title }}</h5>
-                            <p>Categoria : </p>
-                            <a href="{{ route('announcement.category', ['category' => $announcement->category->id]) }}"
-                                class="card-text tx-main-color text-decoration-none"> {{ $announcement->category->name }}</a>
-                            <p class="card-text">{{ $announcement->description }}</p>
+                            <p>Categoria : <a href="{{ route('announcement.category', ['category' => $announcement->category->id]) }}"
+                                class="card-text tx-main-color text-decoration-none"> {{ $announcement->category->name }}</a></p>
+                            
+                            <p class="card-text text-truncate">{{ $announcement->description }}</p>
                             <p class="card-text">{{ $announcement->price }}€</p>
                             <a href="{{ route('announcement.show', compact('announcement')) }}"
-                                class="btn rounded-pill">Go somewhere</a>
+                                class="btn rounded-pill">Scopri di più</a>
                         </div>
                     </div>
                 </div>

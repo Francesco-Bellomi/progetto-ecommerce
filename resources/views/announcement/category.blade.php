@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 py-5 text-center">
                 <h1>Tutti Gli Annunci Della Categoria : {{ $category->name }}</h1>
             </div>
             @foreach ($announcements as $announcement)
@@ -15,10 +15,12 @@
                         @endif
                         <div class="card-body">
                             <h5 class="card-title">{{ $announcement->title }}</h5>
-                            <p class="card-text">{{ $announcement->description }}</p>
+                            <p class="card-text text-truncate">{{ $announcement->description }}</p>
                             <p class="card-text">{{ $announcement->price }}</p>
                             <a href="{{ route('announcement.index') }}" class="btn rounded-pill">Torna alla pagina
                                 annunci</a>
+                            <div class="my-2"><a href="{{ route('announcement.show', compact('announcement')) }}"
+                                class="btn rounded-pill">Dettagli articolo</a></div>
                         </div>
                     </div>
                 </div>

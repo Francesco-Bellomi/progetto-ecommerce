@@ -4,15 +4,15 @@
             <div class="col-12">
                 <h1 class="text-center  fw-bold py-5 display-1">Dettagli : {{ $announcement->title }}</h1>
             </div>
-            <div class="col-12 col-md-6">
-                <p> {{ $announcement->price }} €
-                </p>
+            <div class="col-12 col-md-6 ">
                 <p>
                     {{ $announcement->created_at->format('d/m/y') }}
                 </p>
                 <p>
                     {{ $announcement->description }}
                 </p>
+                <p>Prezzo : <span class="tx-main-color">{{ $announcement->price }}</span> €</p>
+                
                 <div class="py-5"> <a href="{{ route('announcement.index') }}" class="btn btn-success rounded-pill">Torna indietro</a></div>
             </div>
 

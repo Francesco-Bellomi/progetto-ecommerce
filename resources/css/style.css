@@ -65,7 +65,7 @@ h6 {
 }
 
 .masthead {
-    height: 120vh;
+    height: 100vh;
     /* min-height: 50px; */
     /* background: linear-gradient(to top, #00d8d44b , #f8f8f849), url('/img/upsmoke.png'); */
     background-image: url('/img/upsmoke.png');
