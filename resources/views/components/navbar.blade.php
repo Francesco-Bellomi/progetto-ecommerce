@@ -8,7 +8,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 @guest
-                    <li class="nav-item">
+                    <li class="nav-item mx-3">
                         <a class="nav-link active nav-link annunci" href="{{ route('announcement.create') }}"> <i
                                 class="fas fa-plus"></i> Inserisci Annuncio</a>
                     </li>
@@ -34,12 +34,17 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link annunci" href="{{ route('announcement.create') }}"> <i class="fas fa-plus"></i>
+                        <a class="nav-link annunci mx-3" href="{{ route('announcement.create') }}"> <i class="fas fa-plus"></i>
                             Inserisci Annuncio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('announcement.index') }}">Lista Annunci</a>
                     </li>
+                    @if (!Auth::user()->is_revisor)
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('lavoraconnoi') }}">Lavora con noi</a>
+                    </li>
+                    @endif
                     @if (Auth::user()->is_revisor)
                         <li class="nav-item">
                             <a href="{{ route('revisor.homepage') }}" class="nav-link">

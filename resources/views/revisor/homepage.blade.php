@@ -15,7 +15,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card my-5">
                     <div class="card-header">
                         Annuncio # {{ $announcement->id }}
                     </div>
@@ -53,7 +53,7 @@
                                 <h3>Immagini</h3>
                             </div>
                             <div class="col-md-10">
-                                <img src="{{ Storage::url($announcement->img) }} " alt="">
+                                <img src="{{ Storage::url($announcement->img) }} " class="img-fluid" alt="">
                             </div>
                         </div>
                         <hr>

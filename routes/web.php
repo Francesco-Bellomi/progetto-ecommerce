@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/lavoraconnoi' , [PublicController::class , 'lavoraconnoi'])->name('lavoraconnoi')->middleware('auth');
+Route::post('/lavoraconnoi/submit',[PublicController::class, 'submit'])->name('lavoraconnoi.submit');
+
+
 Route::get('/', [AnnouncementController::class , 'homepage'])->name('homepage');
 Route::get('/announcement/create' , [AnnouncementController::class , 'create'])->name('announcement.create');
 Route::post('/announcement/store' , [AnnouncementController::class , 'store'])->name('announcement.store');
@@ -23,10 +27,7 @@ Route::get('/announcement/index' , [AnnouncementController::class , 'index'])->n
 Route::get('/announcement/show/{announcement}' , [AnnouncementController::class , 'show'])->name('announcement.show');
 Route::get('/announcement/category/{category}' , [AnnouncementController::class , 'category'])->name('announcement.category');
 
+
 Route::get('/revisor/homepage' , [RevisorController::class , 'index'])->name('revisor.homepage');
-
-
-
 Route::post('/revisor/announcement/{id}/accept', [RevisorController::class , 'accept'])->name('revisor.accept');
-
 Route::post('/revisor/announcement/{id}/reject', [RevisorController::class , 'reject'])->name('revisor.reject');

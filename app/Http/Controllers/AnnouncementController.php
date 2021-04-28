@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Announcement;
 use App\Models\Category;
+use App\Models\Announcement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,12 +12,17 @@ class AnnouncementController extends Controller
     public function __construct()
     {
         $this->middleware('auth')->except('homepage');
+        
     }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+   
+    
+
 
     public function homepage()
     {

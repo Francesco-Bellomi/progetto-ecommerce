@@ -7,6 +7,7 @@
     <div class="col-md-5 offset-md-2 d-flex align-items-center">
       <div class="card-body">
         <div class="text-center fs-1 fw-bold mt-3 tx-main-color"> Registrati</div>
+        <div class="text-center fs-4 fw-bold mt-3 tx-main-color"> Sei già registrato? <a href="{{route('login')}}">fai il login</a></div>
         <form method="POST" action="{{route('register')}}">
           @csrf
           <div class="mb-3">
