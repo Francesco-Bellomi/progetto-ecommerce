@@ -19,4 +19,9 @@ class Announcement extends Model
     public function category (){
         return $this->belongsTo(Category::class);
     }
+
+    static public function ToBeRevisionedCount()
+    {
+        return Announcement::where('is_accepted' , null)->count();
+    }
 }

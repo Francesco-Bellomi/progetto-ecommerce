@@ -9,7 +9,8 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link active nav-link annunci" href="{{ route('announcement.create') }}"> <i class="fas fa-plus"></i> Inserisci Annuncio</a>
+                        <a class="nav-link active nav-link annunci" href="{{ route('announcement.create') }}"> <i
+                                class="fas fa-plus"></i> Inserisci Annuncio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{ route('login') }}">Login</a>
@@ -33,11 +34,21 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link annunci" href="{{ route('announcement.create') }}"> <i class="fas fa-plus"></i> Inserisci Annuncio</a>
+                        <a class="nav-link annunci" href="{{ route('announcement.create') }}"> <i class="fas fa-plus"></i>
+                            Inserisci Annuncio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('announcement.index') }}">Lista Annunci</a>
                     </li>
+                    @if (Auth::user()->is_revisor)
+                        <li class="nav-item">
+                            <a href="{{ route('revisor.homepage') }}" class="nav-link">
+                                Revisor Home
+                                <span
+                                    class="badge badge-pill badge-warning">{{ \App\Models\Announcement::ToBeRevisionedCount() }}</span>
+                            </a>
+                        </li>
+                    @endif
                     <li class="nav-item dropdown border-0">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">

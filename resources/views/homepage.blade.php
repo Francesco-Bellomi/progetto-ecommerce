@@ -4,6 +4,9 @@
             {{ session('message') }}
         </div>
     @endif
+
+
+
     <!-- Full Page Image Header with Vertically Centered Content -->
     <header class="masthead container-fluid">
         <div class="row h-100 align-items-center">
@@ -28,8 +31,8 @@
                     </div>
                     <div class="col-6 col-md-3">
                         <li class="nav-item dropdown list-unstyled ">
-                            <a class="nav-link dropdown-toggle bg-white rounded-pill sbar tx-sec-color " href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle bg-white rounded-pill sbar tx-sec-color " href="#"
+                                id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Categorie
                             </a>
                             <ul class="dropdown-menu border-0 p-0 text-center ms-5 " aria-labelledby="navbarDropdown">
