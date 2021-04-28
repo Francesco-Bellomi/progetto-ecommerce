@@ -8,14 +8,32 @@
 
 
     <!-- Full Page Image Header with Vertically Centered Content -->
-    <header class="masthead container-fluid">
-        <div class="row h-100 align-items-center">
-            <div class="col-12 text-center">
-                <h1 class="font-weight-light fw-bold display-3">Il Sito numero uno di annunci Made in Italy</h1>
-                <p class="lead fs-3">A great starter layout for a landing page</p>
+    {{-- <header class="masthead">
+        <div class="container h-100">
+            <div class="row">
+                <div class="col-12 col-md-6 mt-5">
+                    <h1 class="font-weight-light fw-bold display-3 mt-5 tx-thi-color">Il Sito numero uno di annunci Made in Italy</h1>
+                    <p class="lead fs-3">A great starter layout for a landing page</p>
+                </div>
+                <div class="col-12 col-md-6 mt-5">
+                    <img src="/img/main.png" alt="" class="img-fluid">
+                </div>
             </div>
         </div>
-    </header>
+    </header> --}}
+    <header class="masthead">
+        <div class="container h-100">
+          <div class="row h-100 align-items-center">
+            <div class="col-12 col-md-4">
+              <h2 class="font-weight-light fw-bold display-3 tx-thi-color">Benvenuto su</h2>
+              <h2 class="font-weight-light fw-bold display-3 tx-thi-color">Plesto</h2>
+            </div>
+            <div class="col-12 col-md-8">
+                <img src="/img/main.png" alt="" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </header>
     <div class="container bg-main-color py-5 my-5 radius-custom">
         <div class="row text-center ">
             <div class="col-12">

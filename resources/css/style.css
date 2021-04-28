@@ -65,14 +65,13 @@ h6 {
 }
 
 .masthead {
-    height: 100vh;
-    /* min-height: 50px; */
-    /* background: linear-gradient(to top, #00d8d44b , #f8f8f849), url('/img/upsmoke.png'); */
-    background-image: url('/img/upsmoke.png');
+    height: 120vh;
+    min-height: 500px;
+    background-image: url('/img/banner-bg.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
+  }
 
 @media screen and (max-width: 1000px) {
     .masthead {
