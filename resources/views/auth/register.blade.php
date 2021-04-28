@@ -1,5 +1,4 @@
 <x-layout>
-
 <div class="container card mt-5">
   <div class="row justify-content-evenly">
     <div class="col-md-5 p-0">
