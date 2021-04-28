@@ -15,8 +15,8 @@ class RevisorController extends Controller
 
     public function index()
     {
-        $announcements = Announcement::where('is_accepted', null)->orderBy('created_at', 'desc')->take(5)->get();
-        return view('revisor.homepage' , compact('announcements'));
+        $announcement = Announcement::where('is_accepted', null)->orderBy('created_at', 'desc')->first();
+        return view('revisor.homepage' , compact('announcement'));
     }
 
     private function setAccepted($announcement_id , $value)

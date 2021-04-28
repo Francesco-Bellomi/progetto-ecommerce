@@ -6,7 +6,7 @@
         </div>
     @endif
 
-    @foreach ($announcements as $announcement)
+    {{-- @foreach ($announcements as $announcement) --}}
         
     @if ($announcement)
         
@@ -24,10 +24,10 @@
                             <div class="col-md-2">
                                 <h3>Utente </h3>
                             </div>
-                            {{-- <div class="col-md-10">
+                            <div class="col-md-10">
                                 <h3> #{{ $announcement->user->id }} , {{ $announcement->user->name }} ,
                                     {{ $announcement->user->email }}</h3>
-                            </div> --}}
+                            </div>
                         </div>
                         <hr>
                         <div class="row">
@@ -82,12 +82,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h3>Non ci sono articoli da revisionare</h3>
+                <h3 class="tx-main-color">Non ci sono articoli da revisionare</h3>
+               
             </div>
         </div>
     </div>
 
      @endif
+{{-- 
+     @endforeach --}}
 
-     @endforeach
 </x-layout>

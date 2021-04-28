@@ -6,6 +6,8 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\Announcement;
+
 
 class User extends Authenticatable
 {
@@ -21,6 +23,11 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+
+
+    public function announcements (){
+        return $this->hasMany(Announcement::class);
+    }
 
     /**
      * The attributes that should be hidden for arrays.

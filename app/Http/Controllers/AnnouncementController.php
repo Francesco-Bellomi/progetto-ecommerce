@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Announcement;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AnnouncementController extends Controller
 {
@@ -22,7 +23,7 @@ class AnnouncementController extends Controller
     {
 
         $announcements = Announcement::all();
-        $announcements = Announcement::orderBy('created_at', 'desc')->take(5)->get();
+        $announcements = Announcement::where('is_accepted',true)->orderBy('created_at', 'desc')->take(5)->get();
         $categories = Category::all();
 
         return view('homepage', compact('announcements', 'categories'));
@@ -34,7 +35,8 @@ class AnnouncementController extends Controller
         $announcements = Announcement::all();
         $categories = Category::all();
 
-        $announcements = Announcement::paginate(8);
+        $announcements = Announcement::where('is_accepted',true)->orderBy('created_at','desc')->paginate(8);
+        
 
 
         return view('announcement.index', compact('announcements', 'categories'));
@@ -67,6 +69,7 @@ class AnnouncementController extends Controller
                 'price' => $request->price,
                 'category_id' => $request->category,
                 'img' => $request->file('img')->store('/public/img'),
+                'user_id'=> Auth::id(),
             ]);
         } else {
             $announcement = Announcement::create([
