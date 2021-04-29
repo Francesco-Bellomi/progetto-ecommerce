@@ -7,6 +7,7 @@ use App\Models\Announcement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class AnnouncementController extends Controller
 {
     public function __construct()
@@ -20,8 +21,6 @@ class AnnouncementController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-   
-    
 
 
     public function homepage()

@@ -1,12 +1,16 @@
 <?php
 
 namespace App\Models;
-use App\Models\Category;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
+use App\Models\Category;
+use Laravel\Scout\Searchable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 class Announcement extends Model
 {
+    use Searchable;
+
     use HasFactory;
 
     protected $fillable = [
@@ -17,6 +21,23 @@ class Announcement extends Model
         'img',
         'user_id'
     ];
+
+    public function toSearchableArray()
+    {
+        $categorie = $this->category->pluck('name')->join(', ');
+        $array = [
+            'id'=>$this->id,
+            'title'=>$this->title,
+            'description'=>$this->description,
+            'altro'=> 'annunci annuncio',
+            'categorie'=>$categorie
+        ];
+
+        // Customize array...
+
+        return $array;
+    }
+
     public function category (){
         return $this->belongsTo(Category::class);
     }
