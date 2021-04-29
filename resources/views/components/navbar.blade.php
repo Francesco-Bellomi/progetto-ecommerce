@@ -48,7 +48,7 @@
                     @if (Auth::user()->is_revisor)
                         <li class="nav-item">
                             <a href="{{ route('revisor.homepage') }}" class="nav-link">
-                                Revisor Home
+                                Area revisore
                                 <span
                                     class="badge badge-pill badge-warning">{{ \App\Models\Announcement::ToBeRevisionedCount() }}</span>
                             </a>

@@ -8,12 +8,12 @@
                 <form method="POST" action="{{ route('announcement.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
-                        <label for="exampleInputtitle1" class="form-label">title </label>
+                        <label for="exampleInputtitle1" class="form-label">Titolo</label>
                         <input type="text" name="title" class="form-control" id="exampleInputtitle1"
                             aria-describedby="titleHelp">
                     </div>
                     <div class="mb-3">
-                        <label for="category" class="form-label">seleziona categoria</label>
+                        <label for="category" class="form-label">Seleziona categoria</label>
                         <select name="category" id="category">
                             @foreach ($categories as $category)
                                 <option value="{{ $category->id }}"> {{ $category->name }}</option>
@@ -21,7 +21,7 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputprice1" class="form-label">price </label>
+                        <label for="exampleInputprice1" class="form-label">Prezzo</label>
                         <input type="number" name="price" class="form-control" id="exampleInputprice1">
                     </div>
                     <div class="mb-3">
@@ -29,11 +29,11 @@
                         <input type="file" name="img" class="form-control" id="exampleInputimage">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Description</label>
+                        <label for="exampleInputEmail1" class="form-label">Descrizione</label>
                         <textarea name="description" id="exampleInputEmail1" class="form-control" cols="36"
                             rows="6"></textarea>
                     </div>
-                    <button type="submit" class="btn rounded-pill">Inserisci Annnuncio</button>
+                    <button type="submit" class="btn rounded-pill">Inserisci annuncio</button>
                 </form>
             </div>
         </div>

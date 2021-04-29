@@ -10,7 +10,7 @@
                     @csrf
                     @method('put')
                     <div class="mb-3">
-                        <label for="exampleInputtitle1" class="form-label">Modifica Titolo</label>
+                        <label for="exampleInputtitle1" class="form-label">Modifica titolo</label>
                         <input type="text" name="title" class="form-control" id="exampleInputtitle1"
                             aria-describedby="titleHelp" value="{{ $announcement->title }}">
                     </div>
@@ -23,7 +23,7 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputprice1" class="form-label">Modifica Prezzo</label>
+                        <label for="exampleInputprice1" class="form-label">Modifica prezzo</label>
                         <input type="number" name="price" class="form-control" id="exampleInputprice1" value="{{ $announcement->price }}">
                     </div>
                     <div class="mb-3">
@@ -33,15 +33,15 @@
                         @else
                             <img src="/img/default.jpg" class="card-img-top float-right img-fluid" alt="">
                         @endif
-                        <label for="exampleInputimage" class="form-label">Cambia Immagine Annuncio</label>
+                        <label for="exampleInputimage" class="form-label">Cambia immagine annuncio</label>
                         <input type="file" name="img" class="form-control" id="exampleInputimage">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Modifica Descrizione</label>
+                        <label for="exampleInputEmail1" class="form-label">Modifica descrizione</label>
                         <textarea name="description" id="exampleInputEmail1" class="form-control" cols="36"
                             rows="6">{{ $announcement->description }}</textarea>
                     </div>
-                    <button type="submit" class="btn rounded-pill">Modifica Annnuncio</button>
+                    <button type="submit" class="btn rounded-pill">Modifica annuncio</button>
                 </form>
             </div>
         </div>

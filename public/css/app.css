@@ -10903,8 +10903,9 @@ h6 {
 }
 
 .masthead {
+    /* height: 120vh; */
     min-height: 500px;
-    background-image: url('/img/banner-bg2.png');
+    background-image: url('/img/banner-bg4.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -10920,9 +10921,9 @@ h6 {
 .section1 {
     /* height: 140vh; */
     /* min-height: 500px; */
-    background-image: url('/img/explosion.png');
+    background-image: url('/img/downsmoke.png');
     /* background: linear-gradient(to bottom, #00d8d44b , #f8f8f849), url('/img/smoketransparent2.png'); */
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -11151,4 +11152,17 @@ h6 {
 .bg-white {
     background-color: var(--thi-color);
 }
+/* Position text in the middle of the page/image */
+.bg-text {
+    background-color: var(--main-color); /* Fallback color */
+    background-color: rgba(45, 170, 215, 0.2); /* Black w/opacity/see-through */
+    /* color: white; */
+    /* font-weight: bold; */
+    /* border: 3px solid #f1f1f1; */
+    /* transform: translate(-50%, -50%); */
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+  }
 

@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center tx-main-color fw-bold py-5 display-1">Lista Annunci</h1>
+                <h1 class="text-center tx-main-color fw-bold py-5 display-1">Lista annunci</h1>
             </div>
             @foreach ($announcements as $announcement)
                 <div class=" col-md-4 col-xl-3">

@@ -62,7 +62,7 @@
                             <div class="col-md-6">
                                 <form method="POST" action="{{ route('revisor.undo', $announcement->id) }}">
                                     @csrf
-                                    <button type="submit" class="btn">Ritorna indietro </button>
+                                    <button type="submit" class="btn">Revisiona di nuovo</button>
                                 </form>
                             </div>
                         </div>

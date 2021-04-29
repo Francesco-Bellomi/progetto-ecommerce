@@ -41,7 +41,7 @@
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
         <a class="navbar-brand" href="{{ route('homepage') }}"><img src="/img/logo_small.png" alt="" class="logo"></a>
     </div>
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    <div class="text-center tx-thi-color p-3" style="background-color: rgba(0, 0, 0, 0.2);">
       © 2020 Copyright:
       <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
     </div>
