@@ -37,3 +37,7 @@ Route::get('/revisor/homepage' , [RevisorController::class , 'index'])->name('re
 Route::post('/revisor/announcement/{id}/accept', [RevisorController::class , 'accept'])->name('revisor.accept');
 Route::post('/revisor/announcement/{id}/reject', [RevisorController::class , 'reject'])->name('revisor.reject');
 
+
+Route::get('/revisor/rejected' , [RevisorController::class , 'rejected'])->name('revisor.rejected');
+Route::post('/revisor/announcement/{id}/undo', [RevisorController::class , 'undo'])->name('revisor.undo');
+

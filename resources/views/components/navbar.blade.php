@@ -53,6 +53,16 @@
                                     class="badge badge-pill badge-warning">{{ \App\Models\Announcement::ToBeRevisionedCount() }}</span>
                             </a>
                         </li>
+
+
+                        <li class="nav-item">
+                            <a href="{{ route('revisor.rejected') }}" class="nav-link">
+                                Annunci rifiutati 
+                                
+                            </a>
+                        </li>
+
+
                     @endif
                     <li class="nav-item dropdown border-0">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"

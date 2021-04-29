@@ -55,6 +55,9 @@ class AnnouncementController extends Controller
         return view('announcement.index', compact('announcements', 'categories'));
     }
 
+
+
+  
     /**
      * Show the form for creating a new resource.
      *
