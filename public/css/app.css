@@ -10893,6 +10893,7 @@ h6 {
     font-family: 'Tenor Sans', sans-serif;
 }
 
+
 .masthead {
     height: 120vh;
     min-height: 500px;
@@ -10902,11 +10903,11 @@ h6 {
     background-repeat: no-repeat;
   }
 
-@media screen and (max-width: 1000px) {
+/* @media screen and (max-width: 1000px) {
     .masthead {
         max-height: 50vh;
     }
-}
+} */
 
 .section1 {
     /* height: 140vh; */
