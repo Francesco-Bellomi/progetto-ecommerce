@@ -25,11 +25,11 @@
         <div class="container h-100">
           <div class="row h-100 align-items-center">
             <div class="col-12 col-md-4">
-              <h2 class="font-weight-light fw-bold display-3 tx-thi-color">Benvenuto su</h2>
+              <h2 class="font-weight-light fw-bold display-3 tx-thi-color">Benvenuti su</h2>
               <h2 class="font-weight-light fw-bold display-3 tx-thi-color">Plesto</h2>
             </div>
             <div class="col-12 col-md-8">
-                <img src="/img/main.png" alt="" class="img-fluid">
+                <img src="/img/sale.png" alt="" class="img-fluid">
             </div>
           </div>
         </div>
