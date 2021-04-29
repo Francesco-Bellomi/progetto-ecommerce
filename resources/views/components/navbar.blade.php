@@ -13,10 +13,10 @@
                                 class="fas fa-plus"></i> Inserisci Annuncio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('login') }}">Login</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('login') }}">Login <i class="fas fa-sign-in-alt"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('register') }}">Registrati</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('register') }}">Registrati <i class="fas fa-user-plus"></i></a>
                     </li>
                 @endguest
                 @auth
@@ -25,7 +25,7 @@
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Categorie
                         </a>
-                        <ul class="dropdown-menu border-0 p-0" aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu border-0 p-0 text-center" aria-labelledby="navbarDropdown">
                             @foreach ($categories as $category)
                                 <li><a class="dropdown-item"
                                         href="{{ route('announcement.category', ['category' => $category->id]) }}">{{ $category->name }}</a>
@@ -71,12 +71,12 @@
                         </a>
                         <ul class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
                             <li>
-                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                <a class="dropdown-item text-center" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();document.getElementById('form-logout').submit()">
                                     <form method="POST" action="{{ route('logout') }}" id="form-logout">
                                         @csrf
                                     </form>
-                                    Logout
+                                    Logout <i class="fas fa-sign-out-alt"></i>
                                 </a>
                             </li>
                         </ul>

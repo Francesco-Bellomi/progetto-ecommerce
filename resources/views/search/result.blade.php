@@ -1,8 +1,9 @@
 <x-layout>
+    @if (count($announcements) > 0)
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center tx-main-color fw-bold py-5 display-1">I risultati della tua Ricerca per : {{$q}}</h1>
+                <h1 class="text-center tx-main-color fw-bold py-5 fs-1">I risultati della tua Ricerca per : {{$q}}</h1>
             </div>
             @foreach ($announcements as $announcement)
                 <div class=" col-md-4 col-xl-3">
@@ -28,6 +29,7 @@
                     </div>
                 </div>
             @endforeach
+            
         </div>
         {{-- <div class="row py-5">
             <div class="col-12 col-md-8">
@@ -35,4 +37,15 @@
             </div>
         </div> --}}
     </div>
+    @else
+    <div class="container mt-5">
+        <div class="row text-center ">
+            <div class="col-12 ">
+                <h1 class="fw-bold  tx-main-color">OPS... Quello che cerchi non è qui!</h1>
+            </div>
+        </div>
+    </div> 
+    <div class="container py-5 mt-3 error">
+    </div>
+    @endif
 </x-layout>

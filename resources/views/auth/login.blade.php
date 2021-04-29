@@ -30,18 +30,18 @@
       </div>
       <div class="col-md-5 offset-md-2 d-flex align-items-center">
         <div class="card-body">
-          <div class="text-center fs-1 fw-bold mt-3 tx-main-color"> Login</div>
-          <div class="text-center fs-4 fw-bold mt-3 tx-main-color"> Non sei ancora registrato? <a href="{{route('register')}}">fallo ora</a></div>
+          <div class="text-center fs-1 fw-bold mt-3 tx-main-color">Login</div>
+          <div class="text-center fs-4 fw-bold mt-3 tx-sec-color"> Non sei ancora registrato? <a href="{{route('register')}}" class="text-decoration-none tx-main-color">Iscriviti ora</a></div>
           <form method="POST" action="{{route('login')}}">
             @csrf
             
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label"></label>
-              <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+              <input name="email" type="email" class="form-control text-center" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label"></label>
-              <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <input name="password" type="password" class="form-control text-center" id="exampleInputPassword1" placeholder="Password">
             </div>
            
               <div class="text-center">
