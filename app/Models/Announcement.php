@@ -7,6 +7,8 @@ use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
+
+
 class Announcement extends Model
 {
     use Searchable;
@@ -24,13 +26,13 @@ class Announcement extends Model
 
     public function toSearchableArray()
     {
-        $categorie = $this->category->pluck('name')->join(', ');
+        $category = $this->category;
         $array = [
             'id'=>$this->id,
             'title'=>$this->title,
             'description'=>$this->description,
             'altro'=> 'annunci annuncio',
-            'categorie'=>$categorie
+            'category'=>$category
         ];
 
         // Customize array...

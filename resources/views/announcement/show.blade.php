@@ -14,6 +14,7 @@
                 <p>Prezzo : <span class="tx-main-color">{{ $announcement->price }}</span> €</p>
                 
                 <div class="py-5"> <a href="{{ route('announcement.index') }}" class="btn btn-success rounded-pill">Torna indietro</a></div>
+                <div class="py-5"> <a href="{{ route('announcement.edit' , compact('announcement')) }}" class="btn btn-success rounded-pill">Modifica annuncio</a></div>
             </div>
 
             <div class="col-12 col-md-6">

@@ -6,7 +6,7 @@ use App\Models\Category;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Redirect;
 
 class AnnouncementController extends Controller
 {
@@ -21,6 +21,15 @@ class AnnouncementController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+
+    public function search(Request $request)
+    {
+        $q = $request->q;
+        
+        $announcements=Announcement::search($q)->where('is_accepted' ,true )->get();
+
+        return view('search.result' , compact('q', 'announcements'));
+    }
 
 
     public function homepage()
@@ -107,7 +116,9 @@ class AnnouncementController extends Controller
      */
     public function edit(Announcement $announcement)
     {
-        //
+        $categories = Category::all();
+
+        return view('announcement.edit', compact('categories' , 'announcement'));
     }
 
     /**
@@ -119,7 +130,18 @@ class AnnouncementController extends Controller
      */
     public function update(Request $request, Announcement $announcement)
     {
-        //
+        $announcement->title = $request->title;
+        $announcement->description = $request->description;
+        $announcement->price = $request->price;
+        $announcement->category_id = $request->category;
+        if ($request -> img) {
+ 
+            $announcement->img = $request->file('img')->store('public/img');    
+         
+         }
+         $announcement->save();
+         return Redirect(route('announcement.index'));
+         
     }
 
     /**

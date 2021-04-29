@@ -81,7 +81,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 text-center align-items-center">
                 <h3 class="tx-main-color">Non ci sono articoli da revisionare</h3>
                
             </div>

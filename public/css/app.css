@@ -10833,10 +10833,19 @@ textarea.form-control-lg {
     --thi-color: #fbfcff;
     --input-padding-x: 1.5rem;
     --input-padding-y: 0.75rem;
+    --four-color: rgb(45, 170, 215);
+}
+
+.bg-four-color {
+    background-color: var(--four-color);
 }
 
 .bg-main-color {
     background-color: var(--main-color);
+}
+
+.bg-thi-color {
+    background-color: var(--main-color) !important;
 }
 
 .tx-main-color {
@@ -10893,17 +10902,16 @@ h6 {
     font-family: 'Tenor Sans', sans-serif;
 }
 
-
 .masthead {
-    height: 120vh;
     min-height: 500px;
     background-image: url('/img/banner-bg2.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-  }
+}
 
-/* @media screen and (max-width: 1000px) {
+
+/* @media screen and (max-width: 900px) {
     .masthead {
         max-height: 50vh;
     }
@@ -10914,7 +10922,7 @@ h6 {
     /* min-height: 500px; */
     background-image: url('/img/explosion.png');
     /* background: linear-gradient(to bottom, #00d8d44b , #f8f8f849), url('/img/smoketransparent2.png'); */
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }

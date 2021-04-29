@@ -26,8 +26,14 @@ Route::post('/announcement/store' , [AnnouncementController::class , 'store'])->
 Route::get('/announcement/index' , [AnnouncementController::class , 'index'])->name('announcement.index');
 Route::get('/announcement/show/{announcement}' , [AnnouncementController::class , 'show'])->name('announcement.show');
 Route::get('/announcement/category/{category}' , [AnnouncementController::class , 'category'])->name('announcement.category');
+Route::get('/announcement/edit/{announcement}' , [AnnouncementController::class , 'edit'])->name('announcement.edit');
+Route::put('/announcement/update/{announcement}' , [AnnouncementController::class , 'update'])->name('announcement.update');
+
+
+Route::get('/search', [AnnouncementController::class , 'search'])->name('search');
 
 
 Route::get('/revisor/homepage' , [RevisorController::class , 'index'])->name('revisor.homepage');
 Route::post('/revisor/announcement/{id}/accept', [RevisorController::class , 'accept'])->name('revisor.accept');
 Route::post('/revisor/announcement/{id}/reject', [RevisorController::class , 'reject'])->name('revisor.reject');
+

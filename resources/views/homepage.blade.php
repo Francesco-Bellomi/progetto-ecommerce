@@ -10,18 +10,18 @@
     <!-- Full Page Image Header with Vertically Centered Content -->
     <header class="masthead">
         <div class="container h-100">
-          <div class="row h-100 align-items-center">
-            <div class="col-12 col-md-4 mt-5">
-              <h2 class="font-weight-light fw-bold display-3 tx-thi-color">Benvenuti su</h2>
-              <h2 class="font-weight-light fw-bold display-3 tx-thi-color">Plesto</h2>
+            <div class="row h-100  justify-content-evenly align-items-center">
+                <div class="col-12 col-lg-4 mt-5 text-center my-5 py-5">
+                    <h2 class="font-weight-light fw-bold display-3 tx-thi-color">Benvenuti su</h2>
+                    <h2 class="font-weight-light fw-bold display-3 tx-thi-color">Plesto</h2>
+                </div>
+                <div class="col-12  col-lg-8 text-center my-5 py-5">
+                    <img src="/img/main.png" alt="" class="img-fluid">
+                </div>
             </div>
-            <div class="col-12 col-md-8 text-center">
-                <img src="/img/main.png" alt="" class="img-fluid">
-            </div>
-          </div>
         </div>
-      </header>
-    <div class="container bg-main-color py-5 my-5 radius-custom">
+    </header>
+    <div class="container bg-main-color py-5  radius-custom">
         <div class="row text-center ">
             <div class="col-12">
                 <div class="row justify-content-around">
@@ -32,7 +32,11 @@
                         <p class="fs-3">Che categoria cerchi?</p>
                     </div>
                     <div class="col-6 col-md-3">
-                        <input class="sbar form-control" type="search" placeholder="Search" aria-label="Search">
+                        <form method="GET" action="{{ route('search') }}">
+                            @csrf
+                            <input type="text" name="q" class="form-control sbar rounded-pill text-center" placeholder="Inserisci Parola Chiave">
+                            <button type="submit" class="btn bg-thi-color rounded-pill mt-2 ">Cerca</button>
+                        </form>
                     </div>
                     <div class="col-6 col-md-3">
                         <li class="nav-item dropdown list-unstyled ">
@@ -48,15 +52,6 @@
                                 @endforeach
                             </ul>
                         </li>
-                        {{-- <select class="sbar form-control" aria-label="Default select example">
-                            <option selected>Clicca Per selezionare la categoria</option>
-                            @foreach ($categories as $category)
-                                <option id="categoria"><a class="dropdown-item"
-                                        href="{{ route('announcement.category', ['category' => $category->id]) }}">{{ $category->name }}</a>
-                                </option>
-                            @endforeach
-                        </select>
-                        <button type="submit" id="categoria" class="btn">Cerca</button> --}}
                     </div>
                 </div>
             </div>
@@ -68,7 +63,7 @@
         <div class="container my-5">
             <div class="row">
                 <div class="col-12">
-                    <h3 class="text-center tx-sec-color fs-1 fw-bold">Scorri i nostri ultimi annunci</h3>
+                    <h3 class="text-center tx-thi-color bg-four-color rounded-pill mt-5 py-3 fs-1 fw-bold">Scorri i nostri ultimi annunci</h3>
                 </div>
                 <div class="last-ads mt-5">
                     @foreach ($announcements as $announcement)
