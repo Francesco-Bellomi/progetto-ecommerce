@@ -48,8 +48,10 @@
                 <div class="card-body">
                     <div class="text-center fs-1 fw-bold mt-3 tx-sec-color">Hai qualcosa da vendere?</div>
                     <div class="text-center fs-4 fw-bold mt-3 tx-sec-color">Inserisci subito il tuo annuncio ed inizia a guadagnare!</div>
+                    <h3>DEBUG Secret:{{$uniqueSecret}}</h3>
                     <form method="POST" action="{{ route('announcement.store') }}" enctype="multipart/form-data">
                         @csrf
+                       <input type="hidden" name="uniqueSecret" value="{{$uniqueSecret}}">
                         <div class="mb-3">
                             <label for="exampleInputtitle1" class="form-label mt-3"></label>
                             <input type="text" name="title" class="form-control text-center sbar" placeholder="Titolo Annuncio" id="exampleInputtitle1"
@@ -67,9 +69,20 @@
                             <label for="exampleInputprice1" class="form-label"></label>
                             <input type="number" name="price" class="form-control text-center sbar" placeholder="Inserisci Prezzo" id="exampleInputprice1">
                         </div>
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
                             <label for="exampleInputimage" class="form-label"></label>
                             <input type="file" name="img" class="form-control text-center sbar" id="exampleInputimage" placeholder="Aggiungi Immagine">
+                        </div>  --}}
+                        <div class="form-group row">
+                            <label for="images" class="col-md-12 col-form-label text-md-right">
+                                Immagini
+                            </label>
+                            <div class="col-md-12">
+                                <div class="dropzone" id="drophere"></div>
+                                @error('images')
+                                    <span class="invalid-feedback" role="alert"><strong>{{$message}}</strong></span>
+                                @enderror
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label"></label>

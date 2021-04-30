@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use App\Models\AnnouncementImage;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
 
 class AnnouncementController extends Controller
@@ -63,10 +66,16 @@ class AnnouncementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+  
+
+
     public function create()
     {
+        $uniqueSecret=base_convert(sha1(uniqid(mt_rand())),16,36);
+
         $categories = Category::all();
-        return view('announcement.create', compact('categories'));
+        return view('announcement.create', compact('categories','uniqueSecret'));
     }
 
     /**
@@ -93,11 +102,36 @@ class AnnouncementController extends Controller
                 'description' => $request->description,
                 'price' => $request->price,
                 'category_id' => $request->category,
+                // 'user_id'=> Auth::id(),
             ]);
         }
 
+        //   $announcement->user_id=Auth::user()->id;
+        //   $announcement->save();
+        $uniqueSecret=$request->uniqueSecret;
+        $images=session()->get("images.{$uniqueSecret}");
+
+        foreach ($images as $image) {
+            $i= new AnnouncementImage();
+            $fileName = basename($image);
+            $file=Storage::move($image,"/public/announcements/{$announcement->id}/{$fileName}");
+        }
+
+        File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
+
+
 
         return redirect(route('announcement.index'))->with('message', 'il tuo annuncio è stato inserito correttamente');
+    }
+
+    public function uploadImage(Request $request)
+    {
+       $uniqueSecret=$request->uniqueSecret;
+       $fileName=$request->file('file')->store("public/temp/{$uniqueSecret}");
+       session()->push("images.{$uniqueSecret}",$fileName);
+
+       
+       return response()->json(session()->get("images.{$uniqueSecret}"));
     }
 
     /**

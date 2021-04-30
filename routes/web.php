@@ -23,6 +23,7 @@ Route::post('/lavoraconnoi/submit',[PublicController::class, 'submit'])->name('l
 Route::get('/', [AnnouncementController::class , 'homepage'])->name('homepage');
 Route::get('/announcement/create' , [AnnouncementController::class , 'create'])->name('announcement.create');
 Route::post('/announcement/store' , [AnnouncementController::class , 'store'])->name('announcement.store');
+Route::post('/announcement/images/upload' , [AnnouncementController::class , 'uploadImage'])->name('announcement.images.upload');
 Route::get('/announcement/index' , [AnnouncementController::class , 'index'])->name('announcement.index');
 Route::get('/announcement/show/{announcement}' , [AnnouncementController::class , 'show'])->name('announcement.show');
 Route::get('/announcement/category/{category}' , [AnnouncementController::class , 'category'])->name('announcement.category');
