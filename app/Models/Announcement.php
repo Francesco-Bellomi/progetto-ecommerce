@@ -53,7 +53,8 @@ class Announcement extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function announcementImages(){
+    public function images()
+    {
         return $this->hasMany(AnnouncementImage::class);
     }
 }

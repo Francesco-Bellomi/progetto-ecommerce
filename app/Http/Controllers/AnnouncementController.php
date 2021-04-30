@@ -16,7 +16,6 @@ class AnnouncementController extends Controller
     public function __construct()
     {
         $this->middleware('auth')->except('homepage');
-        
     }
     /**
      * Display a listing of the resource.
@@ -28,10 +27,10 @@ class AnnouncementController extends Controller
     public function search(Request $request)
     {
         $q = $request->q;
-        
-        $announcements=Announcement::search($q)->where('is_accepted' ,true )->get();
 
-        return view('search.result' , compact('q', 'announcements'));
+        $announcements = Announcement::search($q)->where('is_accepted', true)->get();
+
+        return view('search.result', compact('q', 'announcements'));
     }
 
 
@@ -39,7 +38,7 @@ class AnnouncementController extends Controller
     {
 
         $announcements = Announcement::all();
-        $announcements = Announcement::where('is_accepted',true)->orderBy('created_at', 'desc')->take(5)->get();
+        $announcements = Announcement::where('is_accepted', true)->orderBy('created_at', 'desc')->take(5)->get();
         $categories = Category::all();
 
         return view('homepage', compact('announcements', 'categories'));
@@ -51,8 +50,8 @@ class AnnouncementController extends Controller
         $announcements = Announcement::all();
         $categories = Category::all();
 
-        $announcements = Announcement::where('is_accepted',true)->orderBy('created_at','desc')->paginate(8);
-        
+        $announcements = Announcement::where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(8);
+
 
 
         return view('announcement.index', compact('announcements', 'categories'));
@@ -60,22 +59,22 @@ class AnnouncementController extends Controller
 
 
 
-  
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
 
-  
 
 
-    public function create()
+
+    public function create(Request $request)
     {
-        $uniqueSecret=base_convert(sha1(uniqid(mt_rand())),16,36);
+        $uniqueSecret = $request->old('uniqueSecret' , base_convert(sha1(uniqid(mt_rand())), 16, 36));
 
         $categories = Category::all();
-        return view('announcement.create', compact('categories','uniqueSecret'));
+        return view('announcement.create', compact('categories', 'uniqueSecret'));
     }
 
     /**
@@ -87,34 +86,47 @@ class AnnouncementController extends Controller
     public function store(Request $request)
     {
 
-        if ($request->img) {
+        // if ($request->img) {
+        //     $announcement = Announcement::create([
+        //         'title' => $request->title,
+        //         'description' => $request->description,
+        //         'price' => $request->price,
+        //         'category_id' => $request->category,
+        //         'img' => $request->file('img')->store('/public/img'),
+        //         'user_id' => Auth::id(),
+        //     ]);
+        // } else {
             $announcement = Announcement::create([
                 'title' => $request->title,
                 'description' => $request->description,
                 'price' => $request->price,
                 'category_id' => $request->category,
-                'img' => $request->file('img')->store('/public/img'),
-                'user_id'=> Auth::id(),
+                'user_id' => Auth::id(),
             ]);
-        } else {
-            $announcement = Announcement::create([
-                'title' => $request->title,
-                'description' => $request->description,
-                'price' => $request->price,
-                'category_id' => $request->category,
-                // 'user_id'=> Auth::id(),
-            ]);
-        }
+        // }
 
         //   $announcement->user_id=Auth::user()->id;
         //   $announcement->save();
-        $uniqueSecret=$request->uniqueSecret;
-        $images=session()->get("images.{$uniqueSecret}");
+
+
+        $uniqueSecret = $request->uniqueSecret;
+
+        $images = session()->get("images.{$uniqueSecret}" , []);
+
+        $removedImages = session()->get("removedimages.{$uniqueSecret}" , []);
+
+        $images = array_diff($images, $removedImages);
 
         foreach ($images as $image) {
-            $i= new AnnouncementImage();
+            $i = new AnnouncementImage();
+            
             $fileName = basename($image);
-            $file=Storage::move($image,"/public/announcements/{$announcement->id}/{$fileName}");
+            $newFileName =  "public/announcements/{$announcement->id}/{$fileName}";
+            Storage::move($image,$newFileName);
+
+            $i->file = $newFileName;
+            $i->announcement_id = $announcement->id;
+            $i->save();
         }
 
         File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
@@ -124,14 +136,49 @@ class AnnouncementController extends Controller
         return redirect(route('announcement.index'))->with('message', 'il tuo annuncio è stato inserito correttamente');
     }
 
+
     public function uploadImage(Request $request)
     {
-       $uniqueSecret=$request->uniqueSecret;
-       $fileName=$request->file('file')->store("public/temp/{$uniqueSecret}");
-       session()->push("images.{$uniqueSecret}",$fileName);
+        $uniqueSecret = $request->uniqueSecret;
+        $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
+        session()->push("images.{$uniqueSecret}", $fileName);
 
-       
-       return response()->json(session()->get("images.{$uniqueSecret}"));
+
+        return response()->json(
+            [
+                'id'=> $fileName
+            ]
+        );
+    }
+
+    public function removeImage(Request $request)
+    {
+        $uniqueSecret = $request->uniqueSecret;
+        $fileName = $request->id;
+
+        session()->push("removedimages.{$uniqueSecret}" , $fileName);
+
+        Storage::delete($fileName);
+
+        return response()->json('ok');
+    }
+
+    public function getImages(Request $request)
+    {
+        $uniqueSecret = $request->uniqueSecret;
+        $images = session()->get("images.{$uniqueSecret}" , []);
+        $removedImages = session()->get("removedimages.{$uniqueSecret}" , []);
+        $images = array_diff($images, $removedImages);
+
+        $data = [];
+
+        foreach ($images as $image) {
+            $data[]= [
+                'id'=>$image,
+                'src'=>Storage::url($image),
+            ];
+        }
+        return response()->json($data);
     }
 
     /**
@@ -155,7 +202,7 @@ class AnnouncementController extends Controller
     {
         $categories = Category::all();
 
-        return view('announcement.edit', compact('categories' , 'announcement'));
+        return view('announcement.edit', compact('categories', 'announcement'));
     }
 
     /**
@@ -171,14 +218,12 @@ class AnnouncementController extends Controller
         $announcement->description = $request->description;
         $announcement->price = $request->price;
         $announcement->category_id = $request->category;
-        if ($request -> img) {
- 
-            $announcement->img = $request->file('img')->store('public/img');    
-         
-         }
-         $announcement->save();
-         return Redirect(route('announcement.index'));
-         
+        if ($request->img) {
+
+            $announcement->img = $request->file('img')->store('public/img');
+        }
+        $announcement->save();
+        return Redirect(route('announcement.index'));
     }
 
     /**

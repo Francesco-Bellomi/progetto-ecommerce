@@ -10,7 +10,9 @@ class AnnouncementImage extends Model
 {
     use HasFactory;
 
-    public function announcement(){
+    public function announcement()
+    {
         return $this->belongsTo(Announcement::class);
     }
+
 }

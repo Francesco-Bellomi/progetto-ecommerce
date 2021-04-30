@@ -14,7 +14,7 @@ class CreateAnnouncementImagesTable extends Migration
     public function up()
     {
         Schema::create('announcement_images', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('file');
             $table->unsignedBigInteger('announcement_id');
             $table->foreign('announcement_id')->references('id')->on('announcements');
@@ -30,6 +30,5 @@ class CreateAnnouncementImagesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('announcement_images');
-        
     }
 }

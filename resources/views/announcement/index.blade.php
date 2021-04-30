@@ -12,13 +12,23 @@
             @foreach ($announcements as $announcement)
                 <div class=" col-md-4 col-xl-3">
                     <div class="card my-5">
-                        @if ($announcement->img)
+                        {{-- @if ($announcement->img)
                             <img src="{{ Storage::url($announcement->img) }}" class="card-img-top float-right"
                                 alt="...">
                         @else
                             <img src="/img/default.jpg" class="card-img-top float-right" alt="">
-                        @endif
+                        @endif --}}
                         <div class="card-body">
+                            <p>
+                                @foreach ($announcement->images as $image)
+                               
+                                    <img src="{{Storage::url($image->file)}}" class="rounded float-right img-fluid" alt="">
+                                
+                                @endforeach
+                                {{$announcement->body}}
+                            </p>
+                        </div>
+                        <div class="card-footer">
                             <p class="card-text">Pubblicato il :
                                 {{ $announcement->created_at->format('d/m/y') }}</p>
                             <h5 class="card-title">{{ $announcement->title }}</h5>
