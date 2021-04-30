@@ -59,10 +59,10 @@
                         <hr>
                         <div class="row">
                             
-                            <div class="col-md-6">
+                            <div class="col-md-12 text-center">
                                 <form method="POST" action="{{ route('revisor.undo', $announcement->id) }}">
                                     @csrf
-                                    <button type="submit" class="btn">Revisiona di nuovo</button>
+                                    <button type="submit" class="btn rounded-pill btn-review">Revisiona di nuovo</button>
                                 </form>
                             </div>
                         </div>

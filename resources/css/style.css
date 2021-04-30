@@ -292,6 +292,18 @@ a:hover {
     transform: scale(1);
 }
 
+.btn-reject {
+    background-color: #d84400 !important;
+}
+
+.btn-accept {
+    background-color: #00d848 !important;
+}
+
+.btn-review {
+    background-color: #167bff !important;
+}
+
 @keyframes swoosh {
     0%,
     100% {

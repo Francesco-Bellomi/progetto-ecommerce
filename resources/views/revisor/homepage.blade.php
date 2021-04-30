@@ -57,17 +57,17 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="row">
+                        <div class="row text-center">
                             <div class="col-md-6">
                                 <form method="POST" action="{{ route('revisor.reject', $announcement->id) }}">
                                     @csrf
-                                    <button type="submit" class="btn">Rifiuta</button>
+                                    <button type="submit" class="btn rounded-pill btn-reject ">Rifiuta Annuncio</button>
                                 </form>
                             </div>
                             <div class="col-md-6">
                                 <form method="POST" action="{{ route('revisor.accept', $announcement->id) }}">
                                     @csrf
-                                    <button type="submit" class="btn">Accetta</button>
+                                    <button type="submit" class="btn rounded-pill btn-accept">Accetta Annuncio</button>
                                 </form>
                             </div>
                         </div>
