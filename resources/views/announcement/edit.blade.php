@@ -56,7 +56,7 @@
             <div class="col-md-5  d-flex align-items-center text-center">
                 <div class="card-body">
                     <div class="text-center fs-1 fw-bold my-3 tx-sec-color">Modifica il tuo
-                        annuncio!</div>
+                        annuncio! </div>
                     <form method="POST" action="{{ route('announcement.update', compact('announcement')) }}"
                         enctype="multipart/form-data">
                         @csrf
