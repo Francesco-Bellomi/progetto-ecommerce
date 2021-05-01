@@ -24,4 +24,12 @@ class PublicController extends Controller
         return redirect(route('homepage'))->with('message' , 'La tua Richiesta è stata inoltrata , verrai ricontattato al più presto');
 
     }
+
+    public function locale($locale){
+
+        session()->put('locale' , $locale);
+
+        return redirect()->back();
+
+    }
 }

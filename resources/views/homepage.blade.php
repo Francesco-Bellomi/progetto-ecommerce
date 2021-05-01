@@ -12,8 +12,8 @@
         <div class="container h-100">
             <div class="row h-100  justify-content-evenly align-items-center">
                 <div class="col-12 col-lg-4 mt-5 text-center my-5 py-5">
-                    <h2 class="font-weight-light fw-bold display-3 tx-thi-color">Benvenuti su</h2>
-                    <h2 class="font-weight-light fw-bold display-3 tx-thi-color">Plesto</h2>
+                    <h2 class="font-weight-light fw-bold display-3 tx-thi-color">{{__('ui.homepage')}}</h2>
+                    
                     {{-- <p class="fs-3 py-2">Cosa cerchi?</p> --}}
                     <form method="GET" action="{{ route('search') }}">
                         @csrf

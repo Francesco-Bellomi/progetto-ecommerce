@@ -6,6 +6,32 @@
             <span class="navbar-toggler-icon me-2"><i class="fas fa-ellipsis-h fs-1"></i></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <form action="{{route('locale' , 'it')}}" method="POST">
+                    @csrf
+                    <button class="nav-link" type="submit" style="background-color:transparent; border:none" >
+                    <span class="flag-icon flag-icon-it"></span>
+                    </button>
+                    </form>
+                </li>
+                <li class="nav-item">
+                    <form action="{{route('locale' , 'en')}}" method="POST">
+                    @csrf
+                    <button class="nav-link" type="submit" style="background-color:transparent; border:none" >
+                    <span class="flag-icon flag-icon-gb"></span>
+                    </button>
+                    </form>
+                </li>
+                <li class="nav-item">
+                    <form action="{{route('locale' , 'es')}}" method="POST">
+                    @csrf
+                    <button class="nav-link" type="submit" style="background-color:transparent; border:none" >
+                    <span class="flag-icon flag-icon-es"></span>
+                    </button>
+                    </form>
+                </li>
+            </ul>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 @guest
                     <li class="nav-item mx-3">

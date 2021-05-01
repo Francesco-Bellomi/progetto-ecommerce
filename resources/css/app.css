@@ -2,5 +2,10 @@
 @import'style';
 
 /* Dropzone */
+
 @import'~dropzone/dist/basic';
 @import'~dropzone/dist/dropzone';
+
+/* Flag  */
+
+@import'~flag-icon-css/css/flag-icon';
