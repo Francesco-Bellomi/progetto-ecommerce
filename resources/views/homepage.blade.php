@@ -18,7 +18,7 @@
                     <form method="GET" action="{{ route('search') }}">
                         @csrf
                         <input type="text" name="q" class="form-control sbar rounded-pill text-center py-2" placeholder="Cosa cerchi?">
-                        <button type="submit" class="btn bg-thi-color rounded-pill my-3 py-2">Scopri tutti i nostri annunci</button>
+                        <button type="submit" class="btn bg-thi-color rounded-pill my-3 py-2">{{__('ui.scopri')}}</button>
                     </form>
                 </div>
                 <div class="col-12 col-lg-8 text-center my-5 py-5">

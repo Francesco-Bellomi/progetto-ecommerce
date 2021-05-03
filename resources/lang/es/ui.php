@@ -12,4 +12,6 @@ return
   'arearevisore'=>'Anuncios rechazados',
   'annuncirifiutati'=>'Anuncios rechazados',
   'ciao'=>'Hola',
+  'scopri'=>'Descubra todos nuestros anuncios',
+  
 ];

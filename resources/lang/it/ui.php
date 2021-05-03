@@ -12,4 +12,5 @@ return
  'arearevisore'=>'Area revisore',
  'annuncirifiutati'=>'Annunci rifiutati',
  'ciao'=>'Ciao',
+ 'scopri'=>'Scopri tutti i nostri annunci',
 ];

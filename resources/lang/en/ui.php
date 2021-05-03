@@ -11,5 +11,6 @@ return
  'lavora'=>'Work with us',
  'arearevisore'=>'Reviewer area',
  'annuncirifiutati'=>'Rejected announcements',
- 'ciao'=>'Hello'
+ 'ciao'=>'Hello',
+ 'scopri'=>'Discover all our announcements',
 ];
