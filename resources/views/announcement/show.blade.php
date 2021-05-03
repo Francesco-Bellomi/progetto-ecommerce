@@ -56,7 +56,7 @@
                 @if (count($announcement->images) > 0)
                 @foreach ($announcement->images as $image)     
                 <div class="carousel-item {{$loop->first ? 'active' : ' '}}">             
-                    <img src="{{Storage::url($image->file)}}" class="rounded float-right img-fluid" alt="">                  
+                    <img src="{{$image->getUrl(650,450)}}" class="rounded float-right img-fluid" alt="">                  
                 </div>
                 
                 @endforeach
@@ -94,5 +94,66 @@
     </div>
     <!-- /.row -->
 </div>  
+
+{{-- <div class="container">
+    <div class="row">
+        <div class="col-12">
+
+        </div>
+        <div class="">
+            @if (count($announcement->images) > 0)
+            @foreach ($announcement->images as $image)     
+            <div class="slider-nav {{$loop->first ? 'slider-for' : ' '}}">             
+                <img src="{{$image->getUrl(650,450)}}" class="" alt="">                  
+            </div>
+            
+            @endforeach
+            @else
+                
+            <div class="carousel-item active">
+                <img src="/img/default.jpg" alt="" class="img-fluid">
+            </div>
+                
+            @endif
+        </div>
+    </div>
+</div> --}}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <!-- Carosello grande -->
+            <div class="slider-for">
+                @if (count($announcement->images) > 0)
+                <img src="{{$announcement->images->first()->getUrl(300,150)}}" class="radius-custom4 img-fluid" alt="">
+                      
+                @else
+                    <img src="/img/default2.png" class="radius-custom4 img-fluid" alt="">
+                @endif
+                
+            </div>
+            
+        </div>
+        <div class="col-12">
+            <!-- carosello piccolo -->
+            <div class="slider-nav">
+                @if (count($announcement->images) > 0)
+                @foreach ($announcement->images as $image)     
+                <div class="slider-nav {{$loop->first ? 'slider-for' : ' '}}">             
+                    <img src="{{$image->getUrl(650,450)}}" class="" alt="">                  
+                </div>
+                
+                @endforeach
+                @else
+                    
+                <div class="carousel-item active">
+                    <img src="/img/default.jpg" alt="" class="img-fluid">
+                </div>
+                    
+                @endif
+            </div>
+        </div>
+    </div>
+</div>
 </x-layout>
 

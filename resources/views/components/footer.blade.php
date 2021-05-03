@@ -1,4 +1,4 @@
-<footer class="bg-main-color text-center tx-for-color mt-5">
+<footer class="bg-main-color text-center tx-for-color mt-5 sticky-bottom">
     <!-- Grid container -->
     <div class="container p-4 pb-0">
       <!-- Section: Social media -->

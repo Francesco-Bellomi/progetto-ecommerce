@@ -6,7 +6,7 @@
             </div>
             @foreach ($announcements as $announcement)
                 <div class="col-12 col-md-4">
-                    <div class="card">
+                    <div class="card my-4">
                         @if ($announcement->img)
                             <img src="{{ Storage::url($announcement->img) }}" class="card-img-top float-right"
                                 alt="...">

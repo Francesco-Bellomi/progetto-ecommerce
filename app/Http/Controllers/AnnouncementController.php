@@ -52,7 +52,7 @@ class AnnouncementController extends Controller
         $announcements = Announcement::all();
         $categories = Category::all();
 
-        $announcements = Announcement::where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(8);
+        $announcements = Announcement::where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(9);
 
 
 
@@ -127,6 +127,7 @@ class AnnouncementController extends Controller
             Storage::move($image,$newFileName);
             dispatch(new ResizeImage($newFileName,300,150));
             dispatch(new ResizeImage($newFileName,400,300));
+            dispatch(new ResizeImage($newFileName,650,450));
 
             $i->file = $newFileName;
             $i->announcement_id = $announcement->id;

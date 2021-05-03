@@ -66,13 +66,13 @@
                 </div>
                 <div class="last-ads mt-5">
                     @foreach ($announcements as $announcement)
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-3">
                             <div class="card me-5 radius-custom2 text-center my-5">
-                                @if ($announcement->img)
-                                    <img src="{{ Storage::url($announcement->img) }}"
-                                        class="card-img-top img-fluid radius-custom4" alt="...">
+                                @if (count($announcement->images) > 0)
+                                <img src="{{$announcement->images->first()->getUrl(300,150)}}" class="radius-custom4 img-fluid" alt="">
+                                      
                                 @else
-                                    <img src="/img/default.jpg" class="card-img-top img-fluid" alt="">
+                                    <img src="/img/default2.png" class="radius-custom4 " alt="">
                                 @endif
                                 <div class="card-body tx-sec-color">
                                     <p class="card-text">Pubblicato il :
