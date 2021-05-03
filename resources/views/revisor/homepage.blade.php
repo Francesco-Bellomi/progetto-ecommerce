@@ -53,7 +53,23 @@
                                 <h3>Immagini</h3>
                             </div>
                             <div class="col-md-10">
-                                <img src="{{ Storage::url($announcement->img) }} " class="img-fluid" alt="">
+                              @foreach ($announcement->images as $image)
+
+                              <div class="row mb-2">
+                                  <div class="col-md-4">
+                                      <img src="{{$image->getUrl(300,150)}}" class="rounded img-fluid" alt="">
+                                  </div>
+                                  <div class="col-md-8">
+                                      {{$image->id}} <br>
+                                      {{$image->file}} <br>
+                                      {{Storage::url($image->file)}} <br>
+                                      
+                                      
+
+                                  </div>
+                              </div>
+                                  
+                              @endforeach
                             </div>
                         </div>
                         <hr>

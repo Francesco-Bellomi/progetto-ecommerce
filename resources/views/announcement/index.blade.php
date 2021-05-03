@@ -22,7 +22,7 @@
                             <p>
                                 @foreach ($announcement->images as $image)
                                
-                                    <img src="{{Storage::url($image->file)}}" class="rounded float-right img-fluid" alt="">
+                                    <img src="{{$image->getUrl(300,150)}}" class="rounded float-right img-fluid" alt="">
                                 
                                 @endforeach
                                 {{$announcement->body}}
