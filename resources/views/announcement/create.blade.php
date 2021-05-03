@@ -1,14 +1,13 @@
 <x-layout>
-    
-    <div class="container py-2 card mt-5 bg-work">
-        <div class="row justify-content-evenly">
-            <div class="col-md-5  d-flex align-items-center text-center">
+    <div class="container-fluid py-2 mt-5 bg-work">
+        <div class="row">
+            <div class="col-12 col-md-5 d-flex align-items-center text-center card ms-5">
                 <div class="card-body">
-                    <div class="text-center fs-1 fw-bold mt-3 tx-sec-color">Hai qualcosa da vendere?</div>
-                    <div class="text-center fs-4 fw-bold mt-3 tx-sec-color">Inserisci subito il tuo annuncio ed inizia a guadagnare!</div>
+                    <div class="text-center fs-1 fw-bold mt-3 tx-main-color">Hai qualcosa da vendere?</div>
+                    <div class="text-center fs-4 fs-1 fw-bold mt-3 tx-main-color">Inserisci subito il tuo annuncio ed inizia a guadagnare!</div>
                     <form method="POST" action="{{ route('announcement.store') }}" enctype="multipart/form-data">
                         @if ($errors->any())
-                            <div class="alert alert-danger">
+                            <div class="alert alert-custom">
                                 <ul class="list-unstyled">
                                     @foreach ($errors->all() as $error)
                                         <li>{{ $error }}</li>
@@ -24,7 +23,7 @@
                                 aria-describedby="titleHelp" value="{{old('title')}}">
                         </div>
                         <div class="mb-3">
-                            <label for="category" class="form-label  fw-bold">Seleziona categoria</label>
+                            <label for="category" class="form-label fw-bold tx-main-color">Seleziona categoria</label>
                             <select name="category" id="category" class="form-control sbar ">
                                 @foreach ($categories as $category)
                                     <option class="text-center" value="{{ $category->id }}"> {{ $category->name }}</option>
@@ -40,12 +39,12 @@
                             <input type="file" name="img" class="form-control text-center sbar" id="exampleInputimage" placeholder="Aggiungi Immagine">
                         </div>  --}}
                         <div class="form-group row">
-                            <label for="images" class="col-md-12 col-form-label text-md-right">
+                            <label for="images" class="col-md-12 col-form-label text-md-right fw-bold tx-main-color">
                                 <input type="hidden" name="images" id="images">
-                                Immagini
+                                Carica le tue immagini
                             </label>
                             <div class="col-md-12">
-                                <div class="dropzone" id="drophere"></div>
+                                <div class="dropzone sbar" id="drophere"></div>
                                 @error('images')
                                     <span class="invalid-feedback" role="alert"><strong>{{$message}}</strong></span>
                                 @enderror
@@ -56,11 +55,10 @@
                             <textarea name="description" id="exampleInputEmail1" class="form-control text-center sbar" placeholder="Descrizione" cols="36"
                                 rows="6">{{old('description')}}</textarea>
                         </div>
-                        <button type="submit" class="btn rounded-pill">Inserisci annuncio</button>
+                        <button type="submit" class="btn rounded-pill py-2">Inserisci annuncio</button>
                     </form>
                 </div>
             </div>
-
         </div>
     </div>
 </x-layout>

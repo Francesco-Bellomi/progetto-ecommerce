@@ -95,14 +95,23 @@
     </div>
     @else
 
-    <div class="container">
+    {{-- <div class="container">
         <div class="row">
-            <div class="col-md-6 text-center align-items-center">
-                <h3 class="tx-main-color">Non ci sono articoli da revisionare</h3>
-               
+            <div class="col-12 text-center align-items-center mt-5">
+                <h3 class="tx-main-color fw-bold"></h3>
             </div>
         </div>
-    </div>
+    </div> --}}
+    <header class="masthead2">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mt-5 text-end my-5 py-5">
+                    <h2 class="fw-bold display-5 tx-main-color">Non ci sono articoli da revisionare.</h2>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
 
      @endif
 {{-- 

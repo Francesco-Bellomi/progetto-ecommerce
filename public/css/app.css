@@ -10917,9 +10917,16 @@ h6 {
         max-height: 50vh;
     }
 } */
-
+.masthead2 {
+    height: 120vh;
+    min-height: 500px;
+    background-image: url('/img/check.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 .section1 {
-    /* height: 140vh; */
+    height: 110vh;
     /* min-height: 500px; */
     background-image: url('/img/downsmoke.png');
     /* background: linear-gradient(to bottom, #00d8d44b , #f8f8f849), url('/img/smoketransparent2.png'); */
@@ -10952,9 +10959,15 @@ h6 {
 }
 
 .bg-work {
-    background-image: url('/img/explosion_1.png');
+    background-image: url('/img/form.png');
     background-size: cover;
-    background-position: center;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+.bg-work2 {
+    background-image: url('/img/videoconf.png');
+    background-size: cover;
+    background-position: right;
     background-repeat: no-repeat;
 }
 
@@ -11202,7 +11215,15 @@ h6 {
     padding: 20px;
     text-align: center;
 }
-
+.dropzone {
+    border-radius: 15px !important;
+    border: 2px solid var(--sec-color) !important;
+}
+.alert-custom{
+    background-color: var(--four-color);
+    color: var(--sec-color);
+    font-weight: bold;
+}
 
 .dropzone, .dropzone * {
   box-sizing: border-box;

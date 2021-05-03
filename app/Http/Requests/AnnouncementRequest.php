@@ -24,7 +24,7 @@ class AnnouncementRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'=>'required|min:5|max:20',
+            'title'=>'required|min:5|max:15',
             'description'=>'required|min:30|max:255',
             'price'=>'required',
             // 'images'=>'image'
@@ -36,7 +36,7 @@ class AnnouncementRequest extends FormRequest
         return[
             'title.required'=>'Il titolo è obbligatorio',
             'title.min'=>'Il titolo deve avere minimo 5 caratteri',
-            'title.max'=>'Il titolo deve avere massimo 20 caratteri',
+            'title.max'=>'Il titolo deve avere massimo 15 caratteri',
             'description.required'=>'La descrizione è obbligatoria',
             'description.min'=>'La descrizione deve avere minimo 30 caratteri',
             'description.max'=>'La descrizione deve avere massimo 255 caratteri',

@@ -25,10 +25,10 @@
 <x-layout>
   <div class="container card mt-5">
     <div class="row justify-content-evenly">
-      <div class="col-md-5 p-0">
+      <div class="col-12 col-md-5 p-0">
         <img src="/img/smoketransparent.png" alt="..." class="">
       </div>
-      <div class="col-md-5 offset-md-2 d-flex align-items-center">
+      <div class="col-12 col-md-5 offset-md-2 d-flex align-items-center">
         <div class="card-body">
           <div class="text-center fs-1 fw-bold mt-3 tx-main-color">Login</div>
           <div class="text-center fs-4 fw-bold mt-3 tx-sec-color"> Non sei ancora registrato? <a href="{{route('register')}}" class="text-decoration-none tx-main-color">Iscriviti ora</a></div>

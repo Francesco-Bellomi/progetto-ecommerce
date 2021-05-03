@@ -62,17 +62,17 @@
         <div class="container my-5">
             <div class="row">
                 <div class="col-12">
-                    <h3 class="text-center tx-for-color mt-5 py-3 fs-1 fw-bold">{{__('ui.scorri')}}</h3>
+                    <h3 class="text-center tx-for-color mt-5 py-3 fw-bold display-4">{{__('ui.scorri')}}</h3>
                 </div>
                 <div class="last-ads mt-5">
                     @foreach ($announcements as $announcement)
                         <div class="col-12 col-md-3">
                             <div class="card me-5 radius-custom2 text-center my-5">
                                 @if (count($announcement->images) > 0)
-                                <img src="{{$announcement->images->first()->getUrl(300,150)}}" class="radius-custom4 img-fluid" alt="">
+                                <img src="{{$announcement->images->first()->getUrl(400,300)}}" class="radius-custom4 img-fluid" alt="">
                                       
                                 @else
-                                    <img src="/img/default2.png" class="radius-custom4 " alt="">
+                                    <img src="/img/default.jpg" class="radius-custom4 " alt="">
                                 @endif
                                 <div class="card-body tx-sec-color">
                                     <p class="card-text">Pubblicato il :

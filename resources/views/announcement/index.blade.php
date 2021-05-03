@@ -7,16 +7,16 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center tx-main-color fw-bold py-5 display-1">Lista annunci</h1>
+                <h1 class="text-center tx-main-color fw-bold py-5">Lista annunci</h1>
             </div>
             @foreach ($announcements as $announcement)
             <div class="col-12 col-md-4">
                 <div class="card me-5 radius-custom2 text-center my-5">
                     @if (count($announcement->images) > 0)
-                    <img src="{{$announcement->images->first()->getUrl(300,150)}}" class="radius-custom4 img-fluid" alt="">
+                    <img src="{{$announcement->images->first()->getUrl(400,300)}}" class="radius-custom4 img-fluid" alt="">
                           
                     @else
-                        <img src="/img/default2.png" class="radius-custom4 img-fluid" alt="">
+                        <img src="/img/default.jpg" class="radius-custom4 img-fluid" alt="">
                     @endif
                     <div class="card-body tx-sec-color">
                         <p class="card-text">Pubblicato il :

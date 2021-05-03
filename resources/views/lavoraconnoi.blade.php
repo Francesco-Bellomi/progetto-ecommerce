@@ -1,10 +1,10 @@
 <x-layout>
-    <div class="container py-2 card mt-5 bg-work">
-        <div class="row justify-content-evenly">
-            <div class="col-md-5  d-flex align-items-center ">
+    <div class="container-fluid py-2 mt-5 bg-work2">
+        <div class="row">
+            <div class="col-12 col-md-5 d-flex align-items-center text-center card ms-5">
                 <div class="card-body">
-                    <div class="text-center fs-1 fw-bold mt-3 tx-sec-color">Vuoi Lavorare con noi?</div>
-                    <div class="text-center fs-4 fw-bold mt-3 tx-sec-color">Richiedi subito di divendare un revisionatore di annunci</div>
+                    <div class="text-center fs-1 fw-bold mt-3 tx-main-color">Vuoi Lavorare con noi?</div>
+                    <div class="text-center fs-4 fw-bold mt-3 tx-main-color">Richiedi subito di divendare un revisionatore di annunci</div>
                     <form method="POST" action="{{route('lavoraconnoi.submit')}}">
                         @csrf
                         <div class="mb-3">
@@ -21,7 +21,7 @@
                             <textarea name="message" id="exampleInputmessage" cols="36" class="form-control text-center sbar" rows="10"  placeholder="Scrivi perchè vorresti lavorare con noi"></textarea>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class=" btn rounded-pill">Inoltra la Richiesta</button>
+                            <button type="submit" class=" btn rounded-pill py-2">Inoltra la Richiesta</button>
                         </div>
                     </form>
                 </div>
