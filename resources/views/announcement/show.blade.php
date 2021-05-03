@@ -40,38 +40,34 @@
       <div class="col-12 col-md-6 mt-5">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                    class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
+            @if (count($announcement->images) > 0)
+            @foreach ($announcement->images as $item)
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{$loop->index}}"
+                class="active" aria-current="true" aria-label="Slide {{$loop->index}}"></button>
+                
+            @endforeach   
+            @else
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                class="active" aria-current="true" aria-label="Slide 0"></button>
+            
+            @endif
+            </div> 
             <div class="carousel-inner">
+                @if (count($announcement->images) > 0)
+                @foreach ($announcement->images as $image)     
+                <div class="carousel-item {{$loop->first ? 'active' : ' '}}">             
+                    <img src="{{Storage::url($image->file)}}" class="rounded float-right img-fluid" alt="">                  
+                </div>
+                
+                @endforeach
+                @else
+                    
                 <div class="carousel-item active">
-                    @if ($announcement->img)
-                        <img src="{{ Storage::url($announcement->img) }}" class="card-img-top float-right"
-                            alt="...">
-                    @else
-                        <img src="/img/default.jpg" class="card-img-top float-right" alt="">
-                    @endif
+                    <img src="/img/default.jpg" alt="" class="img-fluid">
                 </div>
-                <div class="carousel-item">
-                    @if ($announcement->img)
-                        <img src="{{ Storage::url($announcement->img) }}" class="card-img-top float-right"
-                            alt="...">
-                    @else
-                        <img src="/img/default.jpg" class="card-img-top float-right" alt="">
-                    @endif
-                </div>
-                <div class="carousel-item">
-                    @if ($announcement->img)
-                        <img src="{{ Storage::url($announcement->img) }}" class="card-img-top float-right"
-                            alt="...">
-                    @else
-                        <img src="/img/default.jpg" class="card-img-top float-right" alt="">
-                    @endif
-                </div>
+                    
+                @endif                   
+                
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="prev">

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Requests\AnnouncementRequest;
 
 class AnnouncementController extends Controller
 {
@@ -83,7 +84,7 @@ class AnnouncementController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AnnouncementRequest $request)
     {
 
         // if ($request->img) {

@@ -62,7 +62,7 @@
         <div class="container my-5">
             <div class="row">
                 <div class="col-12">
-                    <h3 class="text-center tx-for-color mt-5 py-3 fs-1 fw-bold">Scorri i nostri ultimi annunci</h3>
+                    <h3 class="text-center tx-for-color mt-5 py-3 fs-1 fw-bold">{{__('ui.scorri')}}</h3>
                 </div>
                 <div class="last-ads mt-5">
                     @foreach ($announcements as $announcement)
@@ -114,7 +114,7 @@
                                     <i class="fas fa-bullhorn fa-5x tx-main-color"></i>
                                 </div>
                                 <div class="col-md-8">
-                                    <div class="card-body">
+                                    <div class="card-body py-4">
                                         <h5 class="card-title text-center fw-bold">Card title</h5>
                                         <p class="card-text">This is a wider card with supporting text below as a
                                             natural lead-in to additional content. This content is a little bit longer.
@@ -131,7 +131,7 @@
                                     <i class="fas fa-bullhorn fa-5x tx-main-color"></i>
                                 </div>
                                 <div class="col-md-8">
-                                    <div class="card-body">
+                                    <div class="card-body py-4">
                                         <h5 class="card-title text-center fw-bold">Card title</h5>
                                         <p class="card-text">This is a wider card with supporting text below as a
                                             natural lead-in to additional content. This content is a little bit longer.
@@ -148,7 +148,7 @@
                                     <i class="fas fa-bullhorn fa-5x tx-main-color"></i>
                                 </div>
                                 <div class="col-md-8">
-                                    <div class="card-body">
+                                    <div class="card-body py-4">
                                         <h5 class="card-title text-center fw-bold">Card title</h5>
                                         <p class="card-text">This is a wider card with supporting text below as a
                                             natural lead-in to additional content. This content is a little bit longer.
@@ -165,7 +165,7 @@
                                     <i class="fas fa-bullhorn fa-5x tx-main-color"></i>
                                 </div>
                                 <div class="col-md-8">
-                                    <div class="card-body">
+                                    <div class="card-body py-4">
                                         <h5 class="card-title text-center fw-bold">Card title</h5>
                                         <p class="card-text">This is a wider card with supporting text below as a
                                             natural lead-in to additional content. This content is a little bit longer.
@@ -182,7 +182,7 @@
                                     <i class="fas fa-bullhorn fa-5x tx-main-color"></i>
                                 </div>
                                 <div class="col-md-8">
-                                    <div class="card-body">
+                                    <div class="card-body py-4">
                                         <h5 class="card-title text-center fw-bold">Card title</h5>
                                         <p class="card-text">This is a wider card with supporting text below as a
                                             natural lead-in to additional content. This content is a little bit longer.

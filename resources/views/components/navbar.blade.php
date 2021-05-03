@@ -36,20 +36,20 @@
                 @guest
                     <li class="nav-item mx-3">
                         <a class="nav-link active nav-link annunci" href="{{ route('announcement.create') }}"> <i
-                                class="fas fa-plus"></i> Inserisci Annuncio</a>
+                                class="fas fa-plus"></i> {{__('ui.inserisci')}}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{ route('login') }}">Login <i class="fas fa-sign-in-alt"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('register') }}">Registrati <i class="fas fa-user-plus"></i></a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('register') }}">{{__('ui.registrati')}} <i class="fas fa-user-plus"></i></a>
                     </li>
                 @endguest
                 @auth
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            Categorie
+                            {{__('ui.categorie')}}
                         </a>
                         <ul class="dropdown-menu border-0 p-0 text-center" aria-labelledby="navbarDropdown">
                             @foreach ($categories as $category)
@@ -61,20 +61,20 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link annunci mx-3" href="{{ route('announcement.create') }}"> <i class="fas fa-plus"></i>
-                            Inserisci Annuncio</a>
+                            {{__('ui.inserisci')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('announcement.index') }}">Lista Annunci</a>
+                        <a class="nav-link" href="{{ route('announcement.index') }}">{{__('ui.listaannunci')}}</a>
                     </li>
                     @if (!Auth::user()->is_revisor)
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('lavoraconnoi') }}">Lavora con noi</a>
+                        <a class="nav-link" href="{{ route('lavoraconnoi') }}">{{__('ui.lavora')}}</a>
                     </li>
                     @endif
                     @if (Auth::user()->is_revisor)
                         <li class="nav-item">
                             <a href="{{ route('revisor.homepage') }}" class="nav-link">
-                                Area revisore
+                                {{__('ui.arearevisore')}}
                                 <span
                                     class="badge badge-pill badge-warning">{{ \App\Models\Announcement::ToBeRevisionedCount() }}</span>
                             </a>
@@ -83,7 +83,7 @@
 
                         <li class="nav-item">
                             <a href="{{ route('revisor.rejected') }}" class="nav-link">
-                                Annunci rifiutati 
+                                {{__('ui.annuncirifiutati')}}
                                 
                             </a>
                         </li>
@@ -93,7 +93,7 @@
                     <li class="nav-item dropdown border-0">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            Ciao {{ Auth::user()->name }}
+                            {{__('ui.ciao')}} {{ Auth::user()->name }}
                         </a>
                         <ul class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
                             <li>

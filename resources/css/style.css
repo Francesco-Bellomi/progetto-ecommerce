@@ -99,7 +99,7 @@ h6 {
     background-repeat: no-repeat;
 }
 
-a:hover {
+.navbar a:hover {
     color: #0ac0bd !important;
 }
 
