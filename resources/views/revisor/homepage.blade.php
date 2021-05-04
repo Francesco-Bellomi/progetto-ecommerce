@@ -1,4 +1,4 @@
-div<x-layout>
+<x-layout>
 
     @if (session('access.denied.revisor.only'))
         <div class="alert alert-danger">
