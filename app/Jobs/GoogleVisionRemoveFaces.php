@@ -72,12 +72,11 @@ class GoogleVisionRemoveFaces implements ShouldQueue
                 $w = $bounds [2] [0] - $bounds [0] [0];
                 $h = $bounds [2] [1] - $bounds [0] [1];
                 $image = Image::load($srcPath);
-                $image->watermark('public/img/sfocatura.png')
+                $image->watermark(base_path('public/img/sfocatura.png'))
                 ->watermarkPosition('top-left')
                 ->watermarkPadding($bounds[0] [0], $bounds[0] [1])
                 ->watermarkWidth ($w, Manipulations::UNIT_PIXELS)
                 ->watermarkHeight($h, Manipulations::UNIT_PIXELS)
-                ->watermarkOpacity(50)
                 ->watermarkFit(Manipulations::FIT_STRETCH);
 
                 $image->save($srcPath);
