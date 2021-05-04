@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\AnnouncementRequest;
+use App\Jobs\GoogleVisionLabelImage;
+use App\Jobs\GoogleVisionSafeSearchImage;
 use App\Jobs\ResizeImage;
 
 class AnnouncementController extends Controller
@@ -129,9 +131,14 @@ class AnnouncementController extends Controller
             dispatch(new ResizeImage($newFileName,400,300));
             dispatch(new ResizeImage($newFileName,650,450));
 
+            
             $i->file = $newFileName;
             $i->announcement_id = $announcement->id;
+
             $i->save();
+
+            dispatch(new GoogleVisionSafeSearchImage($i->id));
+            dispatch(new GoogleVisionLabelImage($i->id));
         }
 
         File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));

@@ -6,21 +6,26 @@
             </div>
             @foreach ($announcements as $announcement)
                 <div class="col-12 col-md-4">
-                    <div class="card my-4">
-                        @if ($announcement->img)
-                            <img src="{{ Storage::url($announcement->img) }}" class="card-img-top float-right"
-                                alt="...">
+                    <div class="card me-5 radius-custom2 text-center my-5">
+                        @if (count($announcement->images) > 0)
+                            <img src="{{ $announcement->images->first()->getUrl(400, 300) }}"
+                                class="radius-custom4 img-fluid" alt="">
+
                         @else
-                            <img src="/img/default.jpg" class="card-img-top float-right" alt="">
+                            <img src="/img/default.jpg" class="radius-custom4 img-fluid" alt="">
                         @endif
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $announcement->title }}</h5>
-                            <p class="card-text text-truncate">{{ $announcement->description }}</p>
-                            <p class="card-text">{{ $announcement->price }}</p>
-                            <a href="{{ route('announcement.index') }}" class="btn rounded-pill">Torna alla pagina
-                                annunci</a>
-                            <div class="my-2"><a href="{{ route('announcement.show', compact('announcement')) }}"
-                                class="btn rounded-pill">Dettagli articolo</a></div>
+                        <div class="card-body tx-sec-color">
+                            <p class="card-text">Pubblicato il :
+                                {{ $announcement->created_at->format('d/m/y') }}</p>
+                            <h5 class="card-title fs-4">{{ $announcement->title }}</h5>
+                            <p class="card-text fs-5">{{ $announcement->price }}€</p>
+                            <a href="{{ route('announcement.show', compact('announcement')) }}"
+                                class="btn rounded-pill">Dettaglio</a>
+                        </div>
+                        <div class="card-footer bg-main-color radius-custom3 tx-thi-color fs-5">
+                            <p class="card-text">Categoria : <a
+                                    href="{{ route('announcement.category', ['category' => $announcement->category->id]) }}"
+                                    class="card-text link-cat"> {{ $announcement->category->name }}</a></p>
                         </div>
                     </div>
                 </div>
