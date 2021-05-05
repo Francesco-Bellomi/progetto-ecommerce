@@ -15,8 +15,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card my-5">
-                        <div class="card-header bg-main-color tx-thi-color">
+                    <div class="card my-5 sbar radius-custom2">
+                        <div class="card-header bg-main-color tx-thi-color radius-custom4">
                             Annuncio # {{ $announcement->id }}
                         </div>
                         <div class="card-body">
@@ -56,11 +56,11 @@
                                                 alt="">
                                             </div>
                                             <div class="col-12 col-md-3 my-2">
-                                                Adult : {{ $image->adult }} <br>
-                                                Spoof : {{ $image->spoof }} <br>
-                                                Medical : {{ $image->medical }} <br>
-                                                Violence : {{ $image->violence }} <br>
-                                                Racy : {{ $image->racy }} <br>
+                                                Adult :  <x-googleSafe value="{{$image->adult}}"/> <br>
+                                                Spoof : <x-googleSafe value="{{$image->spoof}}"/> <br>
+                                                Medical :<x-googleSafe value="{{$image->medical}}"/> <br>
+                                                Violence : <x-googleSafe value="{{$image->violence}}"/> <br>
+                                                Racy : <x-googleSafe value="{{$image->racy}}"/> <br>
                                             </div>
                                             <div class="col-12 col-md-3 my-2">
 
@@ -97,7 +97,7 @@
                             </div>
                             
                         </div>
-                        <div class="card-footer bg-main-color">
+                        <div class="card-footer bg-main-color radius-custom3">
                             <p class="tx-thi-color">Categoria : <a
                                 href="{{ route('announcement.category', ['category' => $announcement->category->id]) }}"
                                 class="card-text link-cat"> {{ $announcement->category->name }}</a></p>
