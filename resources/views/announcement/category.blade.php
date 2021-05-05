@@ -1,4 +1,5 @@
 <x-layout>
+    @if (count($announcements) > 0)
     <div class="container">
         <div class="row">
             <div class="col-12 py-5 text-center">
@@ -36,5 +37,15 @@
                 {{ $announcements->links() }}
             </div>
         </div>
-    </div>
+    </div>  
+    @else
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="tx-sec-color fw-bold py-5">Non ci sono annunci per la categoria : <span class="tx-main-color fs-1">{{ $category->name }}</span></h2>
+                    <h3 class="tx-sec-color fw-bold py-5">Vuoi aggiungere te il primo</h3>
+                </div>
+            </div>
+        </div>
+    @endif
 </x-layout>
