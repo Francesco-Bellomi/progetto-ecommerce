@@ -1,6 +1,6 @@
 <x-layout>
     @if (session('message'))
-        <div class="alert alert-success">
+        <div class="text-center fs-4 fs-1 fw-bold py-3 tx-thi-color bg-four-color">
             {{ session('message') }}
         </div>
     @endif
@@ -32,8 +32,8 @@
     <div class="section1 d-flex align-items-center">
         <div class="container my-5">
             <div class="row align-items-center">
-                <div class="col-2  text-end">
-                    <i class="fas fa-quote-left fs-3 "></i>
+                <div class="col-2 text-end">
+                    <i class="fas fa-quote-left fs-3"></i>
                 </div>
                 <div class="col-10">
                     <h3 class="tx-for-color mt-5 py-3 fw-bold display-4">{{__('ui.scorri')}} </h3>
@@ -85,13 +85,53 @@
                         <div class="card mb-3 me-5">
                             <div class="row g-0 align-items-center">
                                 <div class="col-md-4 d-flex justify-content-center">
-                                    <i class="fas fa-bullhorn fa-5x tx-main-color"></i>
+                                    <i class="fas fa-unlock-alt fa-5x tx-main-color"></i>
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body py-4">
-                                        <h5 class="card-title text-center fw-bold">Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a
-                                            natural lead-in to additional content. This content is a little bit longer.
+                                        <p class="card-text tx-sec-color fs-5 py-3">Proteggi i tuoi dati: non inviare documenti e informazioni personali</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card mb-3 me-5">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-md-4 d-flex justify-content-center">
+                                    <i class="fas fa-credit-card fa-5x tx-main-color"></i>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body py-4">
+                                        <p class="card-text tx-sec-color fs-5 py-3">I metodi di pagamento tracciabili sono piu' sicuri</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card mb-3 me-5">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-md-4 d-flex justify-content-center">
+                                    <i class="fas fa-user-friends fa-5x tx-main-color"></i>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body py-4">
+                                        <p class="card-text tx-sec-color fs-5 py-3">Cerca l'oggetto piu' vicino a te e incontra il venditore</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card mb-3 me-5">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-md-4 d-flex justify-content-center">
+                                    <i class="fas fa-money-bill-wave fa-5x tx-main-color"></i>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body py-4">
+                                        <p class="card-text tx-sec-color fs-5 py-3">Se un oggetto costa troppo poco, non sempre è un affare.
                                         </p>
                                     </div>
                                 </div>
@@ -102,65 +142,11 @@
                         <div class="card mb-3 me-5">
                             <div class="row g-0 align-items-center">
                                 <div class="col-md-4 d-flex justify-content-center">
-                                    <i class="fas fa-bullhorn fa-5x tx-main-color"></i>
+                                    <i class="fas fa-grin-squint-tears fa-5x tx-main-color"></i>
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body py-4">
-                                        <h5 class="card-title text-center fw-bold">Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a
-                                            natural lead-in to additional content. This content is a little bit longer.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="card mb-3 me-5">
-                            <div class="row g-0 align-items-center">
-                                <div class="col-md-4 d-flex justify-content-center">
-                                    <i class="fas fa-bullhorn fa-5x tx-main-color"></i>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body py-4">
-                                        <h5 class="card-title text-center fw-bold">Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a
-                                            natural lead-in to additional content. This content is a little bit longer.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="card mb-3 me-5">
-                            <div class="row g-0 align-items-center">
-                                <div class="col-md-4 d-flex justify-content-center">
-                                    <i class="fas fa-bullhorn fa-5x tx-main-color"></i>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body py-4">
-                                        <h5 class="card-title text-center fw-bold">Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a
-                                            natural lead-in to additional content. This content is a little bit longer.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="card mb-3 me-5">
-                            <div class="row g-0 align-items-center">
-                                <div class="col-md-4 d-flex justify-content-center">
-                                    <i class="fas fa-bullhorn fa-5x tx-main-color"></i>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body py-4">
-                                        <h5 class="card-title text-center fw-bold">Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a
-                                            natural lead-in to additional content. This content is a little bit longer.
-                                        </p>
+                                        <p class="card-text tx-sec-color fs-5 py-3">Proviamo ad essere il clone cinese di subito.it</p>
                                     </div>
                                 </div>
                             </div>
@@ -174,7 +160,7 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col-12 my-5">
-                    <h2 class="tx-main-color fw-bold fs-1">I tuoi affari iniziano da qui!</h2>
+                    <h4 class="tx-for-color mt-5 py-3 fw-bold display-4">I tuoi affari iniziano da qui!</h4>
                 </div>
             </div>
             <div class="row py-5 justify-content-evenly">
@@ -192,7 +178,7 @@
                 <div class="col-6 text-center">
                     <h1 class="tx-for-color tx-main-color fw-bold fs-1">Contattaci</h1>
                     <p class="tx-for-color tx-main-color fw-bold fs-2">Per qualsiasi dubbio</p>
-                    <a href="" class="btn rounded-pill fs-3 px-5 mb-5">Scrivici!</a>
+                    <a href="{{ route('contattaci') }}" class="btn rounded-pill fs-3 px-5 mb-5">Scrivici!</a>
                 </div>
                 <div class="col-6 text-center my-5">
                     <img src="/img/mail.png" class="img-fluid" alt="">

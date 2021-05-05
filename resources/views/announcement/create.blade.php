@@ -4,7 +4,9 @@
             <div class="col-12 col-md-5 d-flex align-items-center text-center card ms-5">
                 <div class="card-body">
                     <div class="text-center fs-1 fw-bold mt-3 tx-main-color">Hai qualcosa da vendere?</div>
-                    <div class="text-center fs-4 fs-1 fw-bold mt-3 tx-main-color">Inserisci subito il tuo annuncio ed inizia a guadagnare!</div>
+                    <div class="text-center fs-4 fw-bold mt-3 tx-main-color">Inserisci subito il tuo annuncio ed inizia a guadagnare!
+
+                    </div>
                     <form method="POST" action="{{ route('announcement.store') }}" enctype="multipart/form-data">
                         @if ($errors->any())
                             <div class="alert alert-custom">

@@ -32,4 +32,8 @@ class PublicController extends Controller
         return redirect()->back();
 
     }
+
+    public function contattaci(){
+        return view('contattaci');
+    }
 }

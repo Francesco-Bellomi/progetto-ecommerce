@@ -1,6 +1,6 @@
 <x-layout>
     @if (session('message'))
-        <div class="alert alert-success">
+        <div class="text-center fs-4 fs-1 fw-bold py-3 tx-thi-color bg-four-color">
             {{ session('message') }}
         </div>
     @endif

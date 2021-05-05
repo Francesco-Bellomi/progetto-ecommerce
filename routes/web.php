@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/lavoraconnoi', [PublicController::class, 'lavoraconnoi'])->name('lavoraconnoi')->middleware('auth');
 Route::post('/lavoraconnoi/submit', [PublicController::class, 'submit'])->name('lavoraconnoi.submit');
+Route::get('/contattaci', [PublicController::class, 'contattaci'])->name('contattaci');
 
 
 Route::get('/', [AnnouncementController::class, 'homepage'])->name('homepage');
