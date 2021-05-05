@@ -17,7 +17,7 @@
                     {{-- <p class="fs-3 py-2">Cosa cerchi?</p> --}}
                     <form method="GET" action="{{ route('search') }}">
                         @csrf
-                        <input type="text" name="q" class="form-control sbar rounded-pill text-center py-2" placeholder="Cosa cerchi?">
+                        <input type="text" name="q" class="form-control sbar rounded-pill text-center py-2" placeholder="{{__('ui.cerchi')}}">
                         <button type="submit" class="btn bg-thi-color rounded-pill my-3 py-2">{{__('ui.scopri')}}</button>
                     </form>
                 </div>
@@ -49,15 +49,15 @@
                                     <img src="/img/default.png" class="radius-custom4 " alt="">
                                 @endif
                                 <div class="card-body tx-sec-color">
-                                    <p class="card-text">Pubblicato il :
+                                    <p class="card-text">{{__('ui.publicato')}}
                                         {{ $announcement->created_at->format('d/m/y') }}</p>
                                     <h5 class="card-title fs-2">{{ $announcement->title }}</h5>
                                     <p class="card-text fs-5">{{ $announcement->price }}€</p>
                                     <a href="{{ route('announcement.show', compact('announcement')) }}"
-                                        class="btn rounded-pill">Scopri di più</a>
+                                        class="btn rounded-pill">{{__('ui.dettaglio')}}</a>
                                 </div>
                                 <div class="card-footer bg-main-color radius-custom3 tx-thi-color fs-5">
-                                    <p class="card-text">Categoria : <a
+                                    <p class="card-text">{{__('ui.categoria')}} <a
                                             href="{{ route('announcement.category', ['category' => $announcement->category->id]) }}"
                                             class="card-text link-cat"> {{ $announcement->category->name }}</a></p>
                                 </div>
@@ -73,8 +73,8 @@
     <div class="container-fluid bg-main-color">
         <div class="row text-center">
             <div class="col-12 mt-5">
-                <h2 class="tx-thi-color">I nostri consigli</h2>
-                <h2 class="tx-thi-color">Ecco qualche semplice consiglio per concludere i tuoi affari in tutta sicurezza
+                <h2 class="tx-thi-color">{{__('ui.consigli')}}</h2>
+                <h2 class="tx-thi-color">{{__('ui.consigli2')}}
                 </h2>
             </div>
         </div>
@@ -89,7 +89,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body py-4">
-                                        <p class="card-text tx-sec-color fs-5 py-3">Proteggi i dati: non inviare informazioni personali</p>
+                                        <p class="card-text tx-sec-color fs-5 py-3">{{__('ui.proteggi')}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +103,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body py-4">
-                                        <p class="card-text tx-sec-color fs-5 py-3">I metodi di pagamento tracciabili sono piu' sicuri</p>
+                                        <p class="card-text tx-sec-color fs-5 py-3">{{__('ui.metodi')}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -117,7 +117,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body py-4">
-                                        <p class="card-text tx-sec-color fs-5 py-3">Cerca sempre l'oggetto piu' vicino a te</p>
+                                        <p class="card-text tx-sec-color fs-5 py-3">{{__('ui.oggetto')}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -131,7 +131,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body py-4">
-                                        <p class="card-text tx-sec-color fs-5 py-3">Non sempre il prezzo basso è un affare.
+                                        <p class="card-text tx-sec-color fs-5 py-3">{{__('ui.prezzo')}}
                                         </p>
                                     </div>
                                 </div>
@@ -146,7 +146,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body py-4">
-                                        <p class="card-text tx-sec-color fs-5 py-3">Proviamo ad essere il clone cinese di subito.it</p>
+                                        <p class="card-text tx-sec-color fs-5 py-3">{{__('ui.cinese')}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -160,7 +160,7 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col-12 my-5">
-                    <h4 class="tx-for-color mt-5 py-3 fw-bold fs-1">I tuoi affari iniziano da qui!</h4>
+                    <h4 class="tx-for-color mt-5 py-3 fw-bold fs-1">{{__('ui.affari')}}</h4>
                 </div>
             </div>
             <div class="row py-5 justify-content-evenly">
@@ -168,17 +168,16 @@
                     <img src="/img/finger.png" alt="" class="img-fluid">
                 </div>
                 <div class="col-4 my-3 align-items-center">
-                    <a href="{{ route('announcement.create') }}" class="btn rounded-pill fs-3 px-5">Inserisci
-                        annuncio</a>
+                    <a href="{{ route('announcement.create') }}" class="btn rounded-pill fs-3 px-5">{{__('ui.inserisci')}}</a>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row align-items-center my-5">
                 <div class="col-6 text-center">
-                    <h4 class="tx-for-color tx-sec-color fw-bold fs-1">Contattaci</h4>
-                    <h4 class="tx-for-color tx-sec-color fw-bold fs-1">Per qualsiasi dubbio</h4>
-                    <a href="{{ route('contattaci') }}" class="btn rounded-pill fs-3 px-5 mb-5">Scrivici!</a>
+                    <h4 class="tx-for-color tx-sec-color fw-bold fs-1">{{__('ui.contattaci')}}</h4>
+                    <h4 class="tx-for-color tx-sec-color fw-bold fs-1">{{__('ui.dubbio')}}</h4>
+                    <a href="{{ route('contattaci') }}" class="btn rounded-pill fs-3 px-5 mb-5">{{__('ui.scrivici')}}</a>
                 </div>
                 <div class="col-6 text-center my-5">
                     <img src="/img/mail.png" class="img-fluid" alt="">
