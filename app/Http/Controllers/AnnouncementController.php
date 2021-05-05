@@ -271,7 +271,7 @@ class AnnouncementController extends Controller
 
         $category = Category::find($category);
 
-        $announcements = $category->announcements()->paginate(5);
+        $announcements = $category->announcements()->paginate(6);
 
         return view('announcement.category', compact('announcements', 'category'));
     }

@@ -7,84 +7,118 @@
     @endif
 
     @foreach ($announcements as $announcement)
-        
-    @if ($announcement)
-        
-   
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card my-5">
-                    <div class="card-header">
-                        Annuncio # {{ $announcement->id }}
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <h3>Utente </h3>
-                            </div>
-                            <div class="col-md-10">
-                                <h3> #{{ $announcement->user->id }} , {{ $announcement->user->name }} ,
-                                    {{ $announcement->user->email }}</h3>
-                            </div>
+    @if ($announcement)
+
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card my-5 sbar radius-custom2">
+                        <div class="card-header bg-main-color tx-thi-color radius-custom4">
+                            Annuncio n° {{ $announcement->id }}
                         </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <h3>Titolo </h3>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-2  tx-main-color">
+                                    <h3 class="fw-bold">Utente </h3>
+                                </div>
+                                <div class="col-md-10">
+                                    <h4>n° {{ $announcement->user->id }} , {{ $announcement->user->name }} ,
+                                        {{ $announcement->user->email }}</h4>
+                                </div>
                             </div>
-                            <div class="col-md-10">
-                                <h3> {{ $announcement->title }} </h3>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-2  tx-main-color">
+                                    <h3 class="fw-bold">Titolo  </h3>
+                                </div>
+                                <div class="col-md-10">
+                                    <h4> {{ $announcement->title }} </h4>
+                                </div>
                             </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <h3>Descrizione</h3>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-2 fw-bold tx-main-color">
+                                    <h3 class="fw-bold">Descrizione</h3>
+                                </div>
+                                <div class="col-md-10">
+                                    <h4> {{ $announcement->description }} </h4>
+                                </div>
                             </div>
-                            <div class="col-md-10">
-                                <h3> {{ $announcement->description }} </h3>
+                            <hr>
+                            <div class="row align-items-center">
+                                
+                                    @foreach ($announcement->images as $image)
+                                            <div class="col-12 col-md-6 my-2 text-center">
+                                                <img src="{{ $image->getUrl(400, 300) }}" class="rounded img-fluid"
+                                                alt="">
+                                            </div>
+                                            <div class="col-12 col-md-4 my-2 fw-bold">
+                                                Adult :  <x-googleSafe value="{{$image->adult}}"/> <hr>
+                                                Spoof : <x-googleSafe value="{{$image->spoof}}"/> <hr>
+                                                Medical :<x-googleSafe value="{{$image->medical}}"/> <hr>
+                                                Violence : <x-googleSafe value="{{$image->violence}}"/> <hr>
+                                                Racy : <x-googleSafe value="{{$image->racy}}"/> <hr>
+                                            </div>
+                                            <div class="col-12 col-md-2 my-2 ">
+
+                                                <b>Labels</b>
+                                                <ul>
+                                                    @if ($image->labels)
+                                                        @foreach ($image->labels as $label)
+                                                            <li>{{ $label }}</li>
+                                                        @endforeach
+                                                    @endif
+                                                </ul>
+                                            </div>
+                                            
+                                            
+                                    @endforeach
+                                
                             </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <h3>Immagini</h3>
+                            <hr>
+                            <div class="row text-center">
+                                <div class="col-12">
+                                    <form method="POST" action="{{ route('revisor.undo', $announcement->id) }}">
+                                        @csrf
+                                        <button type="submit" class="btn rounded-pill ">Revisiona di nuovo</button>
+                                    </form>
+                                </div>
                             </div>
-                            <div class="col-md-10">
-                                <img src="{{ Storage::url($announcement->img) }} " class="img-fluid" alt="">
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
                             
-                            <div class="col-md-12 text-center">
-                                <form method="POST" action="{{ route('revisor.undo', $announcement->id) }}">
-                                    @csrf
-                                    <button type="submit" class="btn rounded-pill btn-review">Revisiona di nuovo</button>
-                                </form>
-                            </div>
                         </div>
-                        <hr>
+                        <div class="card-footer bg-main-color radius-custom3">
+                            <p class="tx-thi-color">Categoria : <a
+                                href="{{ route('announcement.category', ['category' => $announcement->category->id]) }}"
+                                class="card-text link-cat"> {{ $announcement->category->name }}</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     @else
 
-    <div class="container">
+        {{-- <div class="container">
         <div class="row">
-            <div class="col-md-6 text-center align-items-center">
-                <h3 class="tx-main-color">Non ci sono articoli da revisionare</h3>
-               
+            <div class="col-12 text-center align-items-center mt-5">
+                <h3 class="tx-main-color fw-bold"></h3>
             </div>
         </div>
-    </div>
+    </div> --}}
+        <header class="masthead2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 mt-5 text-end my-5 py-5">
+                        <h2 class="fw-bold display-5 tx-main-color">Non ci sono articoli da revisionare.</h2>
 
-     @endif
+                    </div>
+                </div>
+            </div>
+        </header>
 
-     @endforeach
+    @endif
+    @endforeach
 
 </x-layout>

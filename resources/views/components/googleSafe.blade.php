@@ -2,10 +2,10 @@
 
 @switch($value)
     @case('UNKNOWN')
-    <span class="fw-bold text-alert"> {{$value}}</span>
+    <span class="fw-bold text-alert"> {{$value}} </span>
         @break
     @case('UNLIKELY')
-    <span class="fw-bold text-success"> {{$value}}</span>
+    <span class="fw-bold text-success"> {{$value}} </span>
         @break
     @case('VERY_UNLIKELY')
     <span class="fw-bold text-success"> {{$value}}</span>

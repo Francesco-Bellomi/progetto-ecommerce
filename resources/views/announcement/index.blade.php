@@ -10,7 +10,7 @@
                 <h1 class="text-center tx-main-color fw-bold py-5">Lista annunci</h1>
             </div>
             @foreach ($announcements as $announcement)
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-6 col-lg-4">
                     <div class="card me-5 radius-custom2 text-center my-5">
                         @if (count($announcement->images) > 0)
                             <img src="{{ $announcement->images->first()->getUrl(400, 300) }}"

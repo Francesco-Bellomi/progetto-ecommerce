@@ -3,10 +3,10 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center tx-main-color fw-bold py-5">I risultati della tua ricerca : {{$q}}.</h1>
+                <h2 class="text-center tx-sec-color fw-bold py-5">I risultati della tua ricerca per : <span class=" tx-main-color fs-1">{{$q}}</span></h2>
             </div>
             @foreach ($announcements as $announcement)
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-6 col-lg-4">
                     <div class="card me-5 radius-custom2 text-center my-5">
                         @if (count($announcement->images) > 0)
                             <img src="{{ $announcement->images->first()->getUrl(400, 300) }}"
@@ -35,13 +35,14 @@
     </div>
     @else
     <div class="container mt-5">
-        <div class="row text-center ">
-            <div class="col-12 ">
-                <h1 class="fw-bold  tx-main-color">OPS... Quello che cerchi non è qui!</h1>
+        <div class="row text-center align-items-center">
+            <div class="col-12 col-md-4 my-5 ">
+                <h1 class="fw-bold  tx-main-color">OPS... Quello che cerchi non è su questo pianeta!</h1>
+            </div>
+            <div class="col-12 col-md-8 my-5">
+                <img src="/img/errore.png" class="img-fluid" alt="">
             </div>
         </div>
     </div> 
-    <div class="container py-5 mt-3 error">
-    </div>
     @endif
 </x-layout>

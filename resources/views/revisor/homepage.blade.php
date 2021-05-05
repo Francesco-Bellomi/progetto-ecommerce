@@ -17,52 +17,52 @@
                 <div class="col-md-12">
                     <div class="card my-5 sbar radius-custom2">
                         <div class="card-header bg-main-color tx-thi-color radius-custom4">
-                            Annuncio # {{ $announcement->id }}
+                            Annuncio n° {{ $announcement->id }}
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-md-2">
-                                    <h3>Utente </h3>
+                                <div class="col-md-2  tx-main-color">
+                                    <h3 class="fw-bold">Utente </h3>
                                 </div>
                                 <div class="col-md-10">
-                                    <h3> #{{ $announcement->user->id }} , {{ $announcement->user->name }} ,
-                                        {{ $announcement->user->email }}</h3>
+                                    <h4>n° {{ $announcement->user->id }} , {{ $announcement->user->name }} ,
+                                        {{ $announcement->user->email }}</h4>
                                 </div>
                             </div>
                             <hr>
                             <div class="row">
-                                <div class="col-md-2">
-                                    <h3>Titolo </h3>
+                                <div class="col-md-2  tx-main-color">
+                                    <h3 class="fw-bold">Titolo  </h3>
                                 </div>
                                 <div class="col-md-10">
-                                    <h3> {{ $announcement->title }} </h3>
+                                    <h4> {{ $announcement->title }} </h4>
                                 </div>
                             </div>
                             <hr>
                             <div class="row">
-                                <div class="col-md-2">
-                                    <h3>Descrizione</h3>
+                                <div class="col-md-2 fw-bold tx-main-color">
+                                    <h3 class="fw-bold">Descrizione</h3>
                                 </div>
                                 <div class="col-md-10">
-                                    <h3> {{ $announcement->description }} </h3>
+                                    <h4> {{ $announcement->description }} </h4>
                                 </div>
                             </div>
                             <hr>
-                            <div class="row ">
+                            <div class="row align-items-center">
                                 
                                     @foreach ($announcement->images as $image)
                                             <div class="col-12 col-md-6 my-2 text-center">
                                                 <img src="{{ $image->getUrl(400, 300) }}" class="rounded img-fluid"
                                                 alt="">
                                             </div>
-                                            <div class="col-12 col-md-3 my-2">
-                                                Adult :  <x-googleSafe value="{{$image->adult}}"/> <br>
-                                                Spoof : <x-googleSafe value="{{$image->spoof}}"/> <br>
-                                                Medical :<x-googleSafe value="{{$image->medical}}"/> <br>
-                                                Violence : <x-googleSafe value="{{$image->violence}}"/> <br>
-                                                Racy : <x-googleSafe value="{{$image->racy}}"/> <br>
+                                            <div class="col-12 col-md-4 my-2 fw-bold">
+                                                Adult :  <x-googleSafe value="{{$image->adult}}"/> <hr>
+                                                Spoof : <x-googleSafe value="{{$image->spoof}}"/> <hr>
+                                                Medical :<x-googleSafe value="{{$image->medical}}"/> <hr>
+                                                Violence : <x-googleSafe value="{{$image->violence}}"/> <hr>
+                                                Racy : <x-googleSafe value="{{$image->racy}}"/> <hr>
                                             </div>
-                                            <div class="col-12 col-md-3 my-2">
+                                            <div class="col-12 col-md-2 my-2 ">
 
                                                 <b>Labels</b>
                                                 <ul>

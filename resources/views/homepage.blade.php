@@ -27,42 +27,16 @@
             </div>
         </div>
     </header>
-    {{-- <div class="container bg-text py-5 radius-custom">
-        <div class="row text-center ">
-            <div class="col-12">
-                <div class="row justify-content-center">
-                    <div class="col-4">
-                    </div>
-                    <div class="col-6 col-md-6">
-                        <p class="fs-3">Che categoria cerchi?</p>
-                    </div>
-                    
-                    <div class="col-6 col-md-3">
-                        <li class="nav-item dropdown list-unstyled ">
-                            <a class="nav-link dropdown-toggle bg-white rounded-pill sbar tx-sec-color " href="#"
-                                id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Categorie
-                            </a>
-                            <ul class="dropdown-menu border-0 p-0 text-center ms-5 " aria-labelledby="navbarDropdown">
-                                @foreach ($categories as $category)
-                                    <li><a class="dropdown-item "
-                                            href="{{ route('announcement.category', ['category' => $category->id]) }}">{{ $category->name }}</a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </li>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
 
     {{-- carousel ultimi annunci --}}
     <div class="section1 d-flex align-items-center">
         <div class="container my-5">
-            <div class="row">
-                <div class="col-12">
-                    <h3 class="text-center tx-for-color mt-5 py-3 fw-bold display-4">{{__('ui.scorri')}}</h3>
+            <div class="row align-items-center">
+                <div class="col-2  text-end">
+                    <i class="fas fa-quote-left fs-3 "></i>
+                </div>
+                <div class="col-10">
+                    <h3 class="tx-for-color mt-5 py-3 fw-bold display-4">{{__('ui.scorri')}} </h3>
                 </div>
                 <div class="last-ads mt-5">
                     @foreach ($announcements as $announcement)
