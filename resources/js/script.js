@@ -44,4 +44,6 @@ $('.last-ads').slick({
         // settings: "unslick"
         // instead of a settings object
     ]
+    
 });
+

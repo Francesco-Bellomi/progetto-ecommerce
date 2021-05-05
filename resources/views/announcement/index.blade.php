@@ -4,10 +4,20 @@
             {{ session('message') }}
         </div>
     @endif
+
+
+
     <div class="container">
-        <div class="row">
-            <div class="col-12">
+        <div class="row align-items-center my-5 ">
+            <div class="col-12 col-sm-5">
                 <h1 class="text-center tx-main-color fw-bold py-5">Lista annunci</h1>
+            </div>
+            <div class="col-12 col-sm-5 text-center">
+                <form method="GET" action="{{ route('search') }}" class="d-flex">
+                    @csrf
+                    <input type="text" name="q" class="form-control sbar rounded-pill text-center" placeholder="Cosa cerchi?">
+                    <button type="submit" class="btn bg-thi-color rounded-pill mx-2"><i class="fas fa-search"></i></button>
+                </form>
             </div>
             @foreach ($announcements as $announcement)
                 <div class="col-12 col-md-6 col-lg-4">

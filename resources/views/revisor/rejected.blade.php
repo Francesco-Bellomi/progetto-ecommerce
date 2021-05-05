@@ -6,9 +6,11 @@
         </div>
     @endif
 
+
+    @if (count($announcements)>0)
+
     @foreach ($announcements as $announcement)
 
-    @if ($announcement)
 
 
 
@@ -98,20 +100,14 @@
                 </div>
             </div>
         </div>
+    @endforeach
     @else
 
-        {{-- <div class="container">
-        <div class="row">
-            <div class="col-12 text-center align-items-center mt-5">
-                <h3 class="tx-main-color fw-bold"></h3>
-            </div>
-        </div>
-    </div> --}}
-        <header class="masthead2">
+      <header class="masthead2">
             <div class="container">
                 <div class="row">
                     <div class="col-12 mt-5 text-end my-5 py-5">
-                        <h2 class="fw-bold display-5 tx-main-color">Non ci sono articoli da revisionare.</h2>
+                        <h2 class="fw-bold display-5 tx-main-color">Non ci sono annunci rifiutati.</h2>
 
                     </div>
                 </div>
@@ -119,6 +115,6 @@
         </header>
 
     @endif
-    @endforeach
+  
 
 </x-layout>
