@@ -35,7 +35,7 @@ Route::get('/announcement/show/{announcement}', [AnnouncementController::class, 
 Route::get('/announcement/category/{category}', [AnnouncementController::class, 'category'])->name('announcement.category');
 Route::get('/announcement/edit/{announcement}', [AnnouncementController::class, 'edit'])->name('announcement.edit');
 Route::put('/announcement/update/{announcement}', [AnnouncementController::class, 'update'])->name('announcement.update');
-
+Route::delete('/announcement/destroyImg/{image}', [AnnouncementController::class, 'destroyImg'])->name('announcement.destroyImg');
 
 Route::get('/search', [AnnouncementController::class, 'search'])->name('search');
 

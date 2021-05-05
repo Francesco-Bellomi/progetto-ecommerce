@@ -36,10 +36,6 @@
                             <label for="exampleInputprice1" class="form-label"></label>
                             <input type="number" name="price" class="form-control text-center sbar" placeholder="Inserisci Prezzo" id="exampleInputprice1" value="{{old('price')}}">
                         </div>
-                        {{-- <div class="mb-3">
-                            <label for="exampleInputimage" class="form-label"></label>
-                            <input type="file" name="img" class="form-control text-center sbar" id="exampleInputimage" placeholder="Aggiungi Immagine">
-                        </div>  --}}
                         <div class="form-group row">
                             <label for="images" class="col-md-12 col-form-label text-md-right fw-bold tx-main-color">
                                 <input type="hidden" name="images" id="images">

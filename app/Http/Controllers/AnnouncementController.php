@@ -91,16 +91,6 @@ class AnnouncementController extends Controller
     public function store(AnnouncementRequest $request)
     {
 
-        // if ($request->img) {
-        //     $announcement = Announcement::create([
-        //         'title' => $request->title,
-        //         'description' => $request->description,
-        //         'price' => $request->price,
-        //         'category_id' => $request->category,
-        //         'img' => $request->file('img')->store('/public/img'),
-        //         'user_id' => Auth::id(),
-        //     ]);
-        // } else {
             $announcement = Announcement::create([
                 'title' => $request->title,
                 'description' => $request->description,
@@ -108,10 +98,6 @@ class AnnouncementController extends Controller
                 'category_id' => $request->category,
                 'user_id' => Auth::id(),
             ]);
-        // }
-
-        //   $announcement->user_id=Auth::user()->id;
-        //   $announcement->save();
 
 
         $uniqueSecret = $request->uniqueSecret;
@@ -224,11 +210,13 @@ class AnnouncementController extends Controller
      * @param  \App\Models\Announcement  $announcement
      * @return \Illuminate\Http\Response
      */
-    public function edit(Announcement $announcement)
+    public function edit(Announcement $announcement , Request $request)
     {
         $categories = Category::all();
+        
+        $uniqueSecret = $request->old('uniqueSecret', base_convert(sha1(uniqid(mt_rand())), 16, 36));
 
-        return view('announcement.edit', compact('categories', 'announcement'));
+        return view('announcement.edit', compact('categories', 'announcement', 'uniqueSecret'));
     }
 
     /**
@@ -244,12 +232,53 @@ class AnnouncementController extends Controller
         $announcement->description = $request->description;
         $announcement->price = $request->price;
         $announcement->category_id = $request->category;
-        if ($request->img) {
 
-            $announcement->img = $request->file('img')->store('public/img');
+        $uniqueSecret = $request->uniqueSecret;
+
+        $images = session()->get("images.{$uniqueSecret}" , []);
+
+        $removedImages = session()->get("removedimages.{$uniqueSecret}" , []);
+
+        $images = array_diff($images, $removedImages);
+
+        foreach ($images as $image) {
+            $i = new AnnouncementImage();
+            
+            $fileName = basename($image);
+            $newFileName =  "public/announcements/{$announcement->id}/{$fileName}";
+            Storage::move($image,$newFileName);
+            
+
+            
+            $i->file = $newFileName;
+            $i->announcement_id = $announcement->id;
+
+            $i->save();
+
+            GoogleVisionSafeSearchImage::withChain([
+                new GoogleVisionLabelImage ($i->id),
+                new GoogleVisionRemoveFaces ($i->id),
+                new ResizeImage($i->file,300,150),
+                new ResizeImage($i->file,400,300),
+                new ResizeImage($i->file,650,450),
+
+            ])->dispatch($i->id);
+
+
+           
         }
+
+        File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
+
         $announcement->save();
-        return Redirect(route('announcement.index'));
+        return Redirect(route('announcement.show' , compact('announcement')));
+    }
+
+    public function destroyImg(AnnouncementImage $image){
+
+        $image->delete();
+        return redirect()->back();
+
     }
 
     /**
