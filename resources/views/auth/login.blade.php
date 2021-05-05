@@ -9,8 +9,8 @@
             <div class="col-12 col-md-5 offset-md-2 d-flex align-items-center">
                 <div class="card-body">
                     <div class="text-center fs-1 fw-bold mt-3 tx-main-color">Login</div>
-                    <div class="text-center fs-4 fw-bold mt-3 tx-sec-color"> Non sei ancora registrato? <a
-                            href="{{ route('register') }}" class="text-decoration-none tx-main-color">Iscriviti ora</a>
+                    <div class="text-center fs-4 fw-bold mt-3 tx-sec-color">{{__('ui.nonsei')}}<a
+                            href="{{ route('register') }}" class="text-decoration-none tx-main-color"> {{__('ui.iscriviti')}}</a>
                     </div>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -37,7 +37,7 @@
                         @enderror
 
                         <div class="text-center">
-                            <button type="submit" class=" btn rounded-pill my-3">Fai Plesto</button>
+                            <button type="submit" class=" btn rounded-pill my-3">{{__('ui.fai')}}</button>
                         </div>
                     </form>
                 </div>

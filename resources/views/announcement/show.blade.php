@@ -12,16 +12,16 @@
             <div class="row">
                 <div class="col-12 col-md-6">
                     <p class="tx-for-color fs-5">
-                        Inserito il {{ $announcement->created_at->format('d/m/y') }}
+                        {{__('ui.publicato')}} {{ $announcement->created_at->format('d/m/y') }}
                     </p>
                 </div>
                 <div class="col-12 col-md-6">
-                    <p class="tx-for-color fs-4">Prezzo : <span class="tx-main-color">{{ $announcement->price }}€</span></p>
+                    <p class="tx-for-color fs-4">{{__('ui.prezzo')}} <span class="tx-main-color">{{ $announcement->price }}€</span></p>
                 </div>
             </div>
             <hr>
             <p class="tx-for-color fs-5">
-                Nome articolo
+                {{__('ui.nomearticolo')}}
             </p>
             <h2 class="tx-for-color">
                 {{ $announcement->title }}
@@ -44,7 +44,7 @@
             @endif
             </div>
             <div class="col-12">
-                <h6 class="tx-main-color text-end fs-3 fw-bold">Pubblicato da: {{Auth::user()->name}}</h6>
+                <h6 class="tx-main-color text-end fs-3 fw-bold">{{__('ui.publicato2')}} {{Auth::user()->name}}</h6>
             </div> 
             <div class="carousel-inner">
                 @if (count($announcement->images) > 0)
@@ -79,7 +79,7 @@
     <div class="row">
         <div class="col-12">
             <p class="tx-for-color fs-5">
-                Descrizione annuncio
+                {{__('ui.descrizioneannuncio')}}
             </p>
             <h4 class="tx-for-color">
                 {{ $announcement->description }}
@@ -88,7 +88,7 @@
     </div>
     <div class="row">
         <div class="col-4 mt-5">
-            <a href="{{ route('announcement.edit' , compact('announcement')) }}" class="btn rounded-pill">Modifica annuncio</a>
+            <a href="{{ route('announcement.edit' , compact('announcement')) }}" class="btn rounded-pill">{{__('ui.modifica')}}</a>
         </div>
     </div>
     <!-- /.row -->

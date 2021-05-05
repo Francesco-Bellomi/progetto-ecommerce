@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 py-5 text-center">
-                <h2 class="tx-sec-color fw-bold py-5">Tutti gli annunci della categoria : <span class="tx-main-color fs-1">{{ $category->name }}</span></h2>
+                <h2 class="tx-sec-color fw-bold py-5">{{__('ui.tutti')}} <span class="tx-main-color fs-1">{{ $category->name }}</span></h2>
             </div>
             @foreach ($announcements as $announcement)
                 <div class="col-12 col-md-6 col-lg-4">
@@ -16,15 +16,15 @@
                             <img src="/img/default.png" class="radius-custom4 img-fluid" alt="">
                         @endif
                         <div class="card-body tx-sec-color">
-                            <p class="card-text">Pubblicato il :
+                            <p class="card-text">{{__('ui.publicato')}}
                                 {{ $announcement->created_at->format('d/m/y') }}</p>
                             <h5 class="card-title fs-4">{{ $announcement->title }}</h5>
                             <p class="card-text fs-5">{{ $announcement->price }}€</p>
                             <a href="{{ route('announcement.show', compact('announcement')) }}"
-                                class="btn rounded-pill">Dettaglio</a>
+                                class="btn rounded-pill">{{__('ui.dettaglio')}}</a>
                         </div>
                         <div class="card-footer bg-main-color radius-custom3 tx-thi-color fs-5">
-                            <p class="card-text">Categoria : <a
+                            <p class="card-text">{{__('ui.categoria')}} <a
                                     href="{{ route('announcement.category', ['category' => $announcement->category->id]) }}"
                                     class="card-text link-cat"> {{ $announcement->category->name }}</a></p>
                         </div>
@@ -42,8 +42,8 @@
         <div class="container py-5 text-center">
             <div class="row align-items-center">
                 <div class="col-6">
-                    <h2 class="tx-sec-color fw-bold py-5">Non ci sono annunci per la categoria : <span class="tx-main-color fs-1">{{ $category->name }}</span></h2>
-                    <h3 class="tx-sec-color fw-bold py-5">Corri subito ad inserirne uno!</h3>
+                    <h2 class="tx-sec-color fw-bold py-5">{{__('ui.noncisono')}} <span class="tx-main-color fs-1">{{ $category->name }}</span></h2>
+                    <h3 class="tx-sec-color fw-bold py-5">{{__('ui.corri')}}</h3>
                 </div>
                 <div class="col-6">
                     <img src="/img/categoriavuota.png" class="img-fluid" alt="">

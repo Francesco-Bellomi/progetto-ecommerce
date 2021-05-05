@@ -6,9 +6,9 @@
             </div>
             <div class="col-12 col-md-5 offset-md-2 d-flex align-items-center">
                 <div class="card-body">
-                    <div class="text-center fs-1 fw-bold mt-3 tx-main-color"> Registrati</div>
-                    <div class="text-center fs-4 fw-bold mt-3 tx-sec-color"> Sei già registrato? <a
-                            href="{{ route('login') }}" class="text-decoration-none tx-main-color">Entra Subito</a>
+                    <div class="text-center fs-1 fw-bold mt-3 tx-main-color">{{__('ui.registrati')}}</div>
+                    <div class="text-center fs-4 fw-bold mt-3 tx-sec-color"> {{__('ui.seiregistrato')}}<a
+                            href="{{ route('login') }}" class="text-decoration-none tx-main-color">{{__('ui.entra')}}</a>
                     </div>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
@@ -33,7 +33,7 @@
                                 id="exampleInputPasswordConfirm" placeholder="Conferma Password">
                         </div>
                         <div class="text-center">
-                            <button type="submit" class=" btn rounded-pill">Fai Plesto</button>
+                            <button type="submit" class=" btn rounded-pill">{{__('ui.fai')}}</button>
                         </div>
                     </form>
                 </div>

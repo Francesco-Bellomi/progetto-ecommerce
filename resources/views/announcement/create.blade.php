@@ -3,9 +3,8 @@
         <div class="row">
             <div class="col-12 col-md-5 d-flex align-items-center text-center card ms-5">
                 <div class="card-body">
-                    <div class="text-center fs-1 fw-bold mt-3 tx-main-color">Hai qualcosa da vendere?</div>
-                    <div class="text-center fs-4 fw-bold mt-3 tx-main-color">Inserisci subito il tuo annuncio ed inizia a guadagnare!
-
+                    <div class="text-center fs-1 fw-bold mt-3 tx-main-color">{{__('ui.haiqualcosa')}}</div>
+                    <div class="text-center fs-4 fw-bold mt-3 tx-main-color">{{__('ui.guadagnare')}}
                     </div>
                     <form method="POST" action="{{ route('announcement.store') }}" enctype="multipart/form-data">
                         @if ($errors->any())
@@ -21,11 +20,11 @@
                        <input type="hidden" name="uniqueSecret" value="{{$uniqueSecret}}">
                         <div class="mb-3">
                             <label for="exampleInputtitle1" class="form-label mt-3"></label>
-                            <input type="text" name="title" class="form-control text-center sbar" placeholder="Titolo Annuncio" id="exampleInputtitle1"
+                            <input type="text" name="title" class="form-control text-center sbar" placeholder="{{__('ui.titoloannuncio')}}" id="exampleInputtitle1"
                                 aria-describedby="titleHelp" value="{{old('title')}}">
                         </div>
                         <div class="mb-3">
-                            <label for="category" class="form-label fw-bold tx-main-color">Seleziona categoria</label>
+                            <label for="category" class="form-label fw-bold tx-main-color">{{__('ui.selezionacategoria')}}</label>
                             <select name="category" id="category" class="form-control sbar ">
                                 @foreach ($categories as $category)
                                     <option class="text-center" value="{{ $category->id }}"> {{ $category->name }}</option>
@@ -34,12 +33,12 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputprice1" class="form-label"></label>
-                            <input type="number" name="price" class="form-control text-center sbar" placeholder="Inserisci Prezzo" id="exampleInputprice1" value="{{old('price')}}">
+                            <input type="number" name="price" class="form-control text-center sbar" placeholder="{{__('ui.inserisciprezzo')}}" id="exampleInputprice1" value="{{old('price')}}">
                         </div>
                         <div class="form-group row">
                             <label for="images" class="col-md-12 col-form-label text-md-right fw-bold tx-main-color">
                                 <input type="hidden" name="images" id="images">
-                                Carica le tue immagini
+                                {{__('ui.caricaimmagini')}}
                             </label>
                             <div class="col-md-12">
                                 <div class="dropzone sbar" id="drophere"></div>
@@ -50,10 +49,10 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label"></label>
-                            <textarea name="description" id="exampleInputEmail1" class="form-control text-center sbar" placeholder="Descrizione" cols="36"
+                            <textarea name="description" id="exampleInputEmail1" class="form-control text-center sbar" placeholder="{{__('ui.descrizione')}}" cols="36"
                                 rows="6">{{old('description')}}</textarea>
                         </div>
-                        <button type="submit" class="btn rounded-pill py-2">Inserisci annuncio</button>
+                        <button type="submit" class="btn rounded-pill py-2">{{__('ui.inserisci')}}</button>
                     </form>
                 </div>
             </div>

@@ -10,12 +10,12 @@
     <div class="container">
         <div class="row align-items-center my-5 ">
             <div class="col-12 col-sm-5">
-                <h1 class="text-center tx-main-color fw-bold py-5">Lista annunci</h1>
+                <h1 class="text-center tx-main-color fw-bold py-5">{{__('ui.lista')}}</h1>
             </div>
             <div class="col-12 col-sm-5 text-center">
                 <form method="GET" action="{{ route('search') }}" class="d-flex">
                     @csrf
-                    <input type="text" name="q" class="form-control sbar rounded-pill text-center" placeholder="Cosa cerchi?">
+                    <input type="text" name="q" class="form-control sbar rounded-pill text-center" placeholder="{{__('ui.cerchi')}}">
                     <button type="submit" class="btn bg-thi-color rounded-pill mx-2"><i class="fas fa-search"></i></button>
                 </form>
             </div>
@@ -30,15 +30,15 @@
                             <img src="/img/default.png" class="radius-custom4 img-fluid" alt="">
                         @endif
                         <div class="card-body tx-sec-color">
-                            <p class="card-text">Pubblicato il :
+                            <p class="card-text">{{__('ui.publicato')}}
                                 {{ $announcement->created_at->format('d/m/y') }}</p>
                             <h5 class="card-title fs-4">{{ $announcement->title }}</h5>
                             <p class="card-text fs-5">{{ $announcement->price }}€</p>
                             <a href="{{ route('announcement.show', compact('announcement')) }}"
-                                class="btn rounded-pill">Dettaglio</a>
+                                class="btn rounded-pill">{{__('ui.dettaglio')}}</a>
                         </div>
                         <div class="card-footer bg-main-color radius-custom3 tx-thi-color fs-5">
-                            <p class="card-text">Categoria : <a
+                            <p class="card-text">{{__('ui.categoria')}} <a
                                     href="{{ route('announcement.category', ['category' => $announcement->category->id]) }}"
                                     class="card-text link-cat"> {{ $announcement->category->name }}</a></p>
                         </div>
