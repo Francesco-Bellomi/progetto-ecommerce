@@ -39,11 +39,14 @@
         </div>
     </div>  
     @else
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
+        <div class="container py-5 text-center">
+            <div class="row align-items-center">
+                <div class="col-6">
                     <h2 class="tx-sec-color fw-bold py-5">Non ci sono annunci per la categoria : <span class="tx-main-color fs-1">{{ $category->name }}</span></h2>
-                    <h3 class="tx-sec-color fw-bold py-5">Vuoi aggiungere te il primo</h3>
+                    <h3 class="tx-sec-color fw-bold py-5">Corri subito ad inserirne uno!</h3>
+                </div>
+                <div class="col-6">
+                    <img src="/img/categoriavuota.png" class="img-fluid" alt="">
                 </div>
             </div>
         </div>

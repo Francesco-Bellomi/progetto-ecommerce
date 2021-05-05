@@ -12,7 +12,7 @@
         <div class="container h-100">
             <div class="row h-100  justify-content-evenly align-items-center">
                 <div class="col-12 col-lg-4 mt-5 text-center my-5 py-5">
-                    <h2 class="font-weight-light fw-bold display-3 tx-thi-color">{{__('ui.homepage')}}</h2>
+                    <h2 class="font-weight-light fw-bold display-3 tx-thi-color animate__animated animate__bounce animate__slow	2s">{{__('ui.homepage')}}</h2>
                     
                     {{-- <p class="fs-3 py-2">Cosa cerchi?</p> --}}
                     <form method="GET" action="{{ route('search') }}">
@@ -22,7 +22,7 @@
                     </form>
                 </div>
                 <div class="col-12 col-lg-8 text-center my-5 py-5">
-                    <img src="/img/main.png" alt="" class="img-fluid">
+                    <img src="/img/main.png" alt="" class="img-fluid ">
                 </div>
             </div>
         </div>
@@ -165,7 +165,7 @@
             </div>
             <div class="row py-5 justify-content-evenly">
                 <div class="col-4 my-3">
-                    <img src="/img/finger.png" alt="" class="img-fluid">
+                    <img src="/img/finger.png" alt="" class="img-fluid animate__animated animate__wobble animate__infinite infinite animate__slow	2s">
                 </div>
                 <div class="col-4 my-3 align-items-center">
                     <a href="{{ route('announcement.create') }}" class="btn rounded-pill fs-3 px-5">{{__('ui.inserisci')}}</a>
@@ -180,7 +180,7 @@
                     <a href="{{ route('contattaci') }}" class="btn rounded-pill fs-3 px-5 mb-5">{{__('ui.scrivici')}}</a>
                 </div>
                 <div class="col-6 text-center my-5">
-                    <img src="/img/mail.png" class="img-fluid" alt="">
+                    <img src="/img/mail.png" class="img-fluid animate__animated animate__pulse animate__infinite infinite animate__slow	2s" alt="">
                 </div>
             </div>
         </div>
