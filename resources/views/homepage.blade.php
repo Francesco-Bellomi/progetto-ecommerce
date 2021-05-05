@@ -72,7 +72,7 @@
                                 <img src="{{$announcement->images->first()->getUrl(400,300)}}" class="radius-custom4 img-fluid" alt="">
                                       
                                 @else
-                                    <img src="/img/default.jpg" class="radius-custom4 " alt="">
+                                    <img src="/img/default.png" class="radius-custom4 " alt="">
                                 @endif
                                 <div class="card-body tx-sec-color">
                                     <p class="card-text">Pubblicato il :

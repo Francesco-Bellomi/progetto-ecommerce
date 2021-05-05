@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card my-5">
-                        <div class="card-header">
+                        <div class="card-header bg-main-color tx-thi-color">
                             Annuncio # {{ $announcement->id }}
                         </div>
                         <div class="card-body">
@@ -56,9 +56,6 @@
                                                 alt="">
                                             </div>
                                             <div class="col-12 col-md-3 my-2">
-                                                {{-- {{$image->id}} <br>
-                                                {{$image->file}} <br>
-                                                {{Storage::url($image->file)}} <br> --}}
                                                 Adult : {{ $image->adult }} <br>
                                                 Spoof : {{ $image->spoof }} <br>
                                                 Medical : {{ $image->medical }} <br>
@@ -98,7 +95,12 @@
                                     </form>
                                 </div>
                             </div>
-                            <hr>
+                            
+                        </div>
+                        <div class="card-footer bg-main-color">
+                            <p class="tx-thi-color">Categoria : <a
+                                href="{{ route('announcement.category', ['category' => $announcement->category->id]) }}"
+                                class="card-text link-cat"> {{ $announcement->category->name }}</a></p>
                         </div>
                     </div>
                 </div>

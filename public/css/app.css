@@ -11015,7 +11015,7 @@ h6 {
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    background-color: blue;
+    background-color: var(--main-color) !important;
     display: inline-block;
     width: 2rem;
     height: 2rem;

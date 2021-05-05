@@ -57,7 +57,7 @@
                 @else
                     
                 <div class="carousel-item active">
-                    <img src="/img/default.jpg" alt="" class="img-fluid">
+                    <img src="/img/default2.png" alt="" class="img-fluid">
                 </div>
                     
                 @endif                   
