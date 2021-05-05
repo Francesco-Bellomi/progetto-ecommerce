@@ -36,5 +36,15 @@ return
   'sapere'=>'¿Quieres conocer nuestros productos?',
   'informazioni'=>'Para cualquier información escríbanos lo que necesita',
   'dubbio2'=>'Escribe para cualquier duda',
+  'utente'=>'Usuario',
+  'annuncio'=>'Anuncio',
+  'titolo'=>'Título',
+  'descrizione'=>'Descripción',
+  'revisiona'=>'Revisar de nuevo',
+  'rifiuta'=>'Rechazar anuncio',
+  'accetta'=>'Aceptar anuncio',
+  'risultati'=>'Los resultados de su búsqueda para',
+  'ops'=>'OPS....  lo que estás buscando no está en este planeta!',
+
   
 ];

@@ -17,12 +17,12 @@
                 <div class="col-md-12">
                     <div class="card my-5 sbar radius-custom2">
                         <div class="card-header bg-main-color tx-thi-color radius-custom4">
-                            Annuncio n° {{ $announcement->id }}
+                            {{__('ui.annuncio')}} n° {{ $announcement->id }}
                         </div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-2  tx-main-color">
-                                    <h3 class="fw-bold">Utente </h3>
+                                    <h3 class="fw-bold">{{__('ui.utente')}} </h3>
                                 </div>
                                 <div class="col-md-10">
                                     <h4>n° {{ $announcement->user->id }} , {{ $announcement->user->name }} ,
@@ -32,7 +32,7 @@
                             <hr>
                             <div class="row">
                                 <div class="col-md-2  tx-main-color">
-                                    <h3 class="fw-bold">Titolo  </h3>
+                                    <h3 class="fw-bold">{{__('ui.titolo')}}  </h3>
                                 </div>
                                 <div class="col-md-10">
                                     <h4> {{ $announcement->title }} </h4>
@@ -41,7 +41,7 @@
                             <hr>
                             <div class="row">
                                 <div class="col-md-2 fw-bold tx-main-color">
-                                    <h3 class="fw-bold">Descrizione</h3>
+                                    <h3 class="fw-bold">{{__('ui.descrizione')}}</h3>
                                 </div>
                                 <div class="col-md-10">
                                     <h4> {{ $announcement->description }} </h4>
@@ -83,22 +83,20 @@
                                 <div class="col-md-6">
                                     <form method="POST" action="{{ route('revisor.reject', $announcement->id) }}">
                                         @csrf
-                                        <button type="submit" class="btn rounded-pill btn-reject ">Rifiuta
-                                            Annuncio</button>
+                                        <button type="submit" class="btn rounded-pill btn-reject ">{{__('ui.rifiuta')}}</button>
                                     </form>
                                 </div>
                                 <div class="col-md-6">
                                     <form method="POST" action="{{ route('revisor.accept', $announcement->id) }}">
                                         @csrf
-                                        <button type="submit" class="btn rounded-pill btn-accept">Accetta
-                                            Annuncio</button>
+                                        <button type="submit" class="btn rounded-pill btn-accept">{{__('ui.accetta')}}</button>
                                     </form>
                                 </div>
                             </div>
                             
                         </div>
                         <div class="card-footer bg-main-color radius-custom3">
-                            <p class="tx-thi-color">Categoria : <a
+                            <p class="tx-thi-color">{{__('ui.categoria')}}  <a
                                 href="{{ route('announcement.category', ['category' => $announcement->category->id]) }}"
                                 class="card-text link-cat"> {{ $announcement->category->name }}</a></p>
                         </div>
