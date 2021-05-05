@@ -36,4 +36,14 @@ return
  'sapere'=>'Do you want to know about our products?',
  'informazioni'=>'For any information write us what you need',
  'dubbio2'=>'Write for any doubt',
+ 'utente'=>'User',
+ 'annuncio'=>'Announcement',
+ 'titolo'=>'Title',
+ 'descrizione'=>'Description',
+ 'revisiona'=>'Review again',
+ 'rifiuta'=>'Reject Announcement',
+ 'accetta'=>'Accept Announcement',
+ 'risultati'=>'Your search results for',
+ 'ops'=>'OPS ... What you are looking for is not on this planet!',
+ 
 ];

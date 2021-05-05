@@ -36,5 +36,13 @@ return
  'sapere'=>'Vuoi sapere dei nostri prodotti?',
  'informazioni'=>'Per qualsiasi informazioni scrivici ciò che ti serve',
  'dubbio2'=>'Scrivi per qualsiasi dubbio',
-
+ 'utente'=>'Utente',
+ 'annuncio'=>'Annuncio',
+ 'titolo'=>'Titolo',
+ 'descrizione'=>'Descrizione',
+ 'revisiona'=>'Revisiona di nuovo',
+ 'rifiuta'=>'Rifiuta annuncio',
+ 'accetta'=>'Accetta annuncio',
+ 'risultati'=>'I risultati della tua ricerca per',
+ 'ops'=>'OPS... Quello che cerchi non è su questo pianeta!',
 ];
