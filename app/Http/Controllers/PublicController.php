@@ -36,4 +36,9 @@ class PublicController extends Controller
     public function contattaci(){
         return view('contattaci');
     }
+
+    public function team(){
+        return view('team');
+    }
+
 }

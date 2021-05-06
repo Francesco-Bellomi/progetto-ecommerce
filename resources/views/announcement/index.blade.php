@@ -9,10 +9,10 @@
 
     <div class="container">
         <div class="row align-items-center my-5 ">
-            <div class="col-12 col-sm-5">
+            <div class="col-12 col-md-5">
                 <h1 class="text-center tx-main-color fw-bold py-5">{{__('ui.lista')}}</h1>
             </div>
-            <div class="col-12 col-sm-5 text-center">
+            <div class="col-12 col-md-5 text-center">
                 <form method="GET" action="{{ route('search') }}" class="d-flex">
                     @csrf
                     <input type="text" name="q" class="form-control sbar rounded-pill text-center" placeholder="{{__('ui.cerchi')}}">
