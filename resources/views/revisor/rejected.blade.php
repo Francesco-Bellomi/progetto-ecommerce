@@ -103,7 +103,7 @@
     @endforeach
     @else
 
-      <header class="masthead2">
+      <header class="mastheadcheck">
             <div class="container">
                 <div class="row">
                     <div class="col-12 mt-5 text-end my-5 py-5">

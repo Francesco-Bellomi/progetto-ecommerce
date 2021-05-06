@@ -63,12 +63,12 @@
             <div class="col-12 col-md-6 d-flex align-items-center flex-column">
                 @foreach ($announcement->images as $image)
                     <div class="d-flex align-items-center pb-4">
-                        <img src="{{ $image->getUrl(400, 300) }}" class="rounded float-right img-fluid" alt="">
                         <form method="POST" action="{{ route('announcement.destroyImg', compact('image')) }}">
                             @csrf
                             @method('delete')
-                            <button class="btn btn-danger" type="submit"><i class="fas fa-trash-alt"></i></button>
+                            <button class="btn btn-danger mx-4" type="submit"><i class="fas fa-trash-alt"></i></button>
                         </form>
+                        <img src="{{ $image->getUrl(300, 150) }}" class="rounded float-right img-fluid" alt="">
                     </div>
                 @endforeach
             </div>

@@ -98,6 +98,15 @@ h6 {
     background-repeat: no-repeat;
 }
 
+.mastheadcheck {
+    height: 120vh;
+    min-height: 500px;
+    background-image: url('/img/check2.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .section1 {
     height: 110vh;
     /* min-height: 500px; */
@@ -146,8 +155,8 @@ h6 {
 }
 
 .bg-work3 {
-    background-image: url('/img/edit.png');
-    background-size: cover;
+    background-image: url('/img/explosion.png');
+    background-size: contain;
     background-position: right;
     background-repeat: no-repeat;
 }
@@ -432,4 +441,3 @@ h6 {
     outline: 0;
     box-shadow: 0 0 0 0 rgb(13 110 253 / 25%);
 }
-
