@@ -52,7 +52,6 @@ return
   'seiregistrato'=>'¿Ya estás registrado?',
   'entra'=>'Entrar ahora',
   'lista'=>'Lista de anuncios',
-  'prezzo'=>'Precio :',
   'nomearticolo'=>'Nombre del artículo',
   'descrizioneannuncio'=>'Descripción del anuncio',
   'modifica'=>'Editar anuncio',

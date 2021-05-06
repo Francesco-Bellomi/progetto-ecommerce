@@ -52,7 +52,7 @@ return
  'seiregistrato'=>'Sei già registrato?',
  'entra'=>'Entra subito',
  'lista'=>'Lista annunci',
- 'prezzo'=>'Prezzo :',
+ 'prezzo'=>'Non farti ingannare dal prezzo basso',
  'nomearticolo'=>'Nome articolo',
  'descrizioneannuncio'=>'Descrizione annuncio',
  'modifica'=>'Modifica annuncio',

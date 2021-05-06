@@ -23,7 +23,7 @@ return
  'proteggi'=>'Protect data: do not send personal information',
  'metodi'=>'Traceable payment methods are safer now',
  'oggetto'=>'Always look for the object closest to you',
- 'prezzo'=>'Low price isn\'t always a bargain pay attention',
+ 'prezzo'=>'Don\'t be fooled by the low price , think before buy',
  'cinese'=>'Let\'s try to be the Chinese clone of  subito.it',
  'affari'=>'Your business starts here!',
  'contattaci'=>'Contact us',
@@ -52,7 +52,7 @@ return
  'seiregistrato'=>'Are you already registered?',
  'entra'=>'Enter now',
  'lista'=>'List of announcements',
- 'prezzo'=>'Price :',
+ 
  'nomearticolo'=>'Article name',
  'descrizioneannuncio'=>'Advertisement description',
  'modifica'=>'Edit announcement',

@@ -44,7 +44,7 @@
             @endif
             </div>
             <div class="col-12">
-                <h6 class="tx-main-color text-end fs-3 fw-bold">{{__('ui.publicato2')}} {{Auth::user()->name}}</h6>
+                <h6 class="tx-main-color text-end fs-3 fw-bold">{{__('ui.publicato2')}} {{$announcement->user->name}}</h6>
             </div> 
             <div class="carousel-inner">
                 @if (count($announcement->images) > 0)
@@ -86,11 +86,13 @@
             </h4>
         </div>
     </div>
+    @if ($announcement->user->id == Auth::id())
     <div class="row">
         <div class="col-4 mt-5">
             <a href="{{ route('announcement.edit' , compact('announcement')) }}" class="btn rounded-pill">{{__('ui.modifica')}}</a>
         </div>
-    </div>
+    </div>    
+    @endif
     <!-- /.row -->
 </div>  
 </x-layout>
