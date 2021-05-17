@@ -24,6 +24,7 @@ return
  'metodi'=>'I metodi di pagamento tracciabili sono piu\' sicuri',
  'oggetto'=>'Cerca sempre l\'oggetto piu\' vicino a te',
  'prezzo'=>'Non sempre il prezzo basso è un affare',
+ 'prezzo2'=>'Prezzo:',
  'cinese'=>'Proviamo ad essere il clone cinese di subito.it',
  'affari'=>'I tuoi affari iniziano da qui!',
  'contattaci'=>'Contattaci',

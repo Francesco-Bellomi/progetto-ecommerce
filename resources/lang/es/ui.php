@@ -24,6 +24,7 @@ return
   'metodi'=>'Los métodos de pago rastreables son más seguros',
   'oggetto'=>'Busque siempre el objeto más cercano a usted',
   'prezzo'=>'El precio bajo no siempre es una ganga',
+  'prezzo2'=>'Precio:',
   'cinese'=>'Intentemos ser el clon chino de subito.it',
   'affari'=>'Tu negocio comienza aquí!',
   'contattaci'=>'Contáctenos',

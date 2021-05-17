@@ -24,6 +24,7 @@ return
  'metodi'=>'Traceable payment methods are safer now',
  'oggetto'=>'Always look for the object closest to you',
  'prezzo'=>'Don\'t be fooled by the low price , think before buy',
+ 'prezzo2'=>'Price:',
  'cinese'=>'Let\'s try to be the Chinese clone of  subito.it',
  'affari'=>'Your business starts here!',
  'contattaci'=>'Contact us',

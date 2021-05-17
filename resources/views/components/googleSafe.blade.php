@@ -19,5 +19,4 @@
         @case('VERY_LIKELY')
     <span class="fw-bold text-danger"> {{$value}}</span>
         @break
-
 @endswitch

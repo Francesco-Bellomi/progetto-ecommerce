@@ -52,7 +52,6 @@ class ResizeImage implements ShouldQueue
         ->watermarkPadding(5,5,Manipulations::UNIT_PERCENT)
         ->save($destPath);
         
-        
 
     }
 }

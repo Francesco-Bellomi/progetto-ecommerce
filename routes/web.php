@@ -17,17 +17,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// contacts 
 Route::get('/lavoraconnoi', [PublicController::class, 'lavoraconnoi'])->name('lavoraconnoi')->middleware('auth');
 Route::post('/lavoraconnoi/submit', [PublicController::class, 'submit'])->name('lavoraconnoi.submit');
 Route::get('/contattaci', [PublicController::class, 'contattaci'])->name('contattaci');
 Route::get('/team', [PublicController::class, 'team'])->name('team');
 
 
-
+// announcements create/store
 Route::get('/', [AnnouncementController::class, 'homepage'])->name('homepage');
 Route::get('/announcement/create', [AnnouncementController::class, 'create'])->name('announcement.create');
 Route::post('/announcement/store', [AnnouncementController::class, 'store'])->name('announcement.store');
-
+// Announcement image 
 Route::post('/announcement/images/upload', [AnnouncementController::class, 'uploadImage'])->name('announcement.upload');
 Route::delete('/announcement/images/remove', [AnnouncementController::class, 'removeImage'])->name('announcement.remove');
 Route::get('/announcement/images' , [AnnouncementController::class , 'getImages'])->name('announcement.images');
@@ -39,16 +40,15 @@ Route::get('/announcement/edit/{announcement}', [AnnouncementController::class, 
 Route::put('/announcement/update/{announcement}', [AnnouncementController::class, 'update'])->name('announcement.update');
 Route::delete('/announcement/destroyImg/{image}', [AnnouncementController::class, 'destroyImg'])->name('announcement.destroyImg');
 
+// search 
 Route::get('/search', [AnnouncementController::class, 'search'])->name('search');
 
-
+// Revisor 
 Route::get('/revisor/homepage', [RevisorController::class, 'index'])->name('revisor.homepage');
 Route::post('/revisor/announcement/{id}/accept', [RevisorController::class, 'accept'])->name('revisor.accept');
 Route::post('/revisor/announcement/{id}/reject', [RevisorController::class, 'reject'])->name('revisor.reject');
-
-
 Route::get('/revisor/rejected', [RevisorController::class, 'rejected'])->name('revisor.rejected');
 Route::post('/revisor/announcement/{id}/undo', [RevisorController::class, 'undo'])->name('revisor.undo');
 
-
+// lang 
 Route::post('/locale/{locale}', [PublicController::class, 'locale'])->name('locale');

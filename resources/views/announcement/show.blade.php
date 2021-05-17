@@ -16,7 +16,7 @@
                     </p>
                 </div>
                 <div class="col-12 col-md-6">
-                    <p class="tx-for-color fs-4">{{__('ui.prezzo')}} <span class="tx-main-color">{{ $announcement->price }}€</span></p>
+                    <p class="tx-for-color fs-4">{{__('ui.prezzo2')}} <span class="tx-main-color">{{ $announcement->price }}€</span></p>
                 </div>
             </div>
             <hr>

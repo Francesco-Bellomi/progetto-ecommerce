@@ -39,6 +39,9 @@
                                 class="fas fa-plus"></i> {{__('ui.inserisci')}}</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('announcement.index') }}">{{__('ui.listaannunci')}}</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{ route('login') }}">Login <i class="fas fa-sign-in-alt"></i></a>
                     </li>
                     <li class="nav-item">

@@ -20,7 +20,7 @@ class AnnouncementController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except('homepage');
+        $this->middleware('auth')->except('homepage' , 'index');
     }
     /**
      * Display a listing of the resource.
@@ -128,10 +128,6 @@ class AnnouncementController extends Controller
                 new ResizeImage($i->file,300,150),
                 new ResizeImage($i->file,400,300),
                 new ResizeImage($i->file,650,450),
-                
-                
-
-
 
 
             ])->dispatch($i->id);

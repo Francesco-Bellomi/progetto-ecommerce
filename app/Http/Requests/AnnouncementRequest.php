@@ -25,7 +25,7 @@ class AnnouncementRequest extends FormRequest
     {
         return [
             'title'=>'required|min:5|max:20',
-            'description'=>'required|min:30|max:400',
+            'description'=>'required|min:30|max:1000',
             'price'=>'required',
             // 'images'=>'image'
         ];
@@ -39,7 +39,7 @@ class AnnouncementRequest extends FormRequest
             'title.max'=>'Il titolo deve avere massimo 15 caratteri',
             'description.required'=>'La descrizione è obbligatoria',
             'description.min'=>'La descrizione deve avere minimo 30 caratteri',
-            'description.max'=>'La descrizione deve avere massimo 255 caratteri',
+            'description.max'=>'La descrizione deve avere massimo 1000 caratteri',
             'price.required'=>'Il prezzo è obbligatorio',
             // 'images.image'=>'Il file deve essere un immagine',
         ];
